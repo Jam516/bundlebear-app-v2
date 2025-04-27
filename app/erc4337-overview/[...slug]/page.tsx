@@ -19,7 +19,9 @@ export const metadata: Metadata = {
 
 export default async function OverviewPage({ params }: { params: { slug: string[] } }) {
 
-  const [chain = 'all', timeframe = 'week'] = Array.isArray(params.slug) ? params.slug : [];
+  const parameters = await params;
+  // const [chain = 'all', timeframe = 'week'] = Array.isArray(params.slug) ? params.slug : [];
+  const [chain = 'all', timeframe = 'week'] = Array.isArray(parameters.slug) ? parameters.slug : [];
 
   const data = await getOverviewData({ chain, timeframe });
 
