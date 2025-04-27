@@ -23,7 +23,7 @@ type TransformedEntry = {
     [key: string]: string | number;
 };
 
-export function ChainBarChart({
+export function BundlerBarChart({
     data,
     xaxis,
     yaxis,
@@ -156,18 +156,17 @@ export function ChainBarChart({
                 />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
-                <Bar dataKey="base" stackId="a" fill="#90C2E7" />
-                <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
-                <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
-                <Bar dataKey="worldchain" name="world chain" stackId="a" fill="#121212" />
-                <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
-                <Bar dataKey="arbitrum_nova" stackId="a" fill="#FF7700" />
-                <Bar dataKey="celo" stackId="a" fill="#FCFF52" />
-                <Bar dataKey="avalanche" stackId="a" fill="#823038" />
-                <Bar dataKey="bsc" stackId="a" fill="#F0B90B" />
-                <Bar dataKey="linea" stackId="a" fill="#fff069" />
-                <Bar dataKey="ethereum" stackId="a" fill="#777780" />
-                <Bar dataKey="gnosis" stackId="a" fill="#0d8f75" />
+                <Bar dataKey="pimlico" stackId="a" fill="#7115AA" />
+                <Bar dataKey="alchemy" stackId="a" fill="#118AB2" />
+                <Bar dataKey="etherspot" stackId="a" fill="#FAC748" />
+                <Bar dataKey="stackup" stackId="a" fill="#1D2F6F" />
+                <Bar dataKey="unipass" stackId="a" fill="#B6D6CC" />
+                <Bar dataKey="candide" stackId="a" fill="#F5D491" />
+                <Bar dataKey="biconomy" stackId="a" fill="#FF4E17" />
+                <Bar dataKey="coinbase" stackId="a" fill="#0052FF" />
+                <Bar dataKey="Unknown" stackId="a" fill="#707070" />
+                <Bar dataKey="particle" stackId="a" fill="#F386FF" />
+                <Bar dataKey="cometh" stackId="a" fill="#5F6D81" />
             </BarChart>
         </ResponsiveContainer>
     );

@@ -1,6 +1,6 @@
 "use client";
 
-import { Bar, BarChart, Tooltip, Legend, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from "recharts";
+import { Line, LineChart, Tooltip, Legend, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from "recharts";
 import moment from 'moment';
 
 type DataEntry = {
@@ -23,13 +23,13 @@ type TransformedEntry = {
     [key: string]: string | number;
 };
 
-export function ChainBarChart({
+export function BundlerLineChart({
     data,
     xaxis,
     yaxis,
     segment,
     usd = false,
-    isPercentage = false
+
 }: BarChartProps) {
     // Shared data transformation logic
     const transformData = (data: DataEntry[]) => {
@@ -50,13 +50,6 @@ export function ChainBarChart({
     };
 
     const transformedData = transformData(data);
-
-    // Percentage formatting functions
-    const toPercent = (decimal: number) =>
-        `${(decimal * 100).toFixed(2)}%`;
-
-    const toPercentTick = (decimal: number) =>
-        `${(decimal * 100).toFixed(0)}%`;
 
     // Number shortening function for Y-axis
     const formatShortNumber = (num: number): string => {
@@ -82,25 +75,6 @@ export function ChainBarChart({
     const CustomTooltip = ({ active, payload, label }: any) => {
         if (!active || !payload || !payload.length) return null;
 
-        if (isPercentage) {
-            const total = payload.reduce((sum: number, entry: any) => sum + (entry.value || 0), 0);
-
-            return (
-                <div className="custom-tooltip" style={{ backgroundColor: 'white', padding: '10px', border: '1px solid #ccc' }}>
-                    <p className="label">{`Date: ${label}`}</p>
-                    {payload.map((entry: any, index: number) => {
-                        const percentage = (entry.value / total) * 100;
-                        return (
-                            <p key={`item-${index}`} style={{ color: entry.color }}>
-                                {`${entry.name}: ${toPercent(percentage / 100)}`}
-                            </p>
-                        );
-                    })}
-                </div>
-            );
-        }
-
-        // Standard tooltip for non-percentage mode - still showing full values
         return (
             <div className="custom-tooltip" style={{ backgroundColor: 'white', padding: '10px', border: '1px solid #ccc' }}>
                 <p className="label">{`Date: ${label}`}</p>
@@ -119,14 +93,8 @@ export function ChainBarChart({
 
     return (
         <ResponsiveContainer width="100%" height={350}>
-            <BarChart
-                data={transformedData}
-                stackOffset={isPercentage ? "expand" : "none"}
-                barCategoryGap={isPercentage ? 0 : 10}
-            >
-                {!isPercentage && (
-                    <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
-                )}
+            <LineChart data={transformedData} >
+                <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
                 <XAxis
                     dataKey={xaxis}
                     stroke="#888888"
@@ -140,35 +108,32 @@ export function ChainBarChart({
                     fontSize={12}
                     tickLine={false}
                     axisLine={false}
-                    tickFormatter={isPercentage
-                        ? toPercentTick
-                        : (value: number) => {
-                            const formattedValue = formatShortNumber(value);
-                            if (usd) {
-                                // Check if the value is negative
-                                return value < 0
-                                    ? `-$${formattedValue.substring(1)}` // Place $ after the negative sign
-                                    : `$${formattedValue}`;
-                            }
-                            return formattedValue;
+                    tickFormatter={(value: number) => {
+                        const formattedValue = formatShortNumber(value);
+                        if (usd) {
+                            // Check if the value is negative
+                            return value < 0
+                                ? `-$${formattedValue.substring(1)}` // Place $ after the negative sign
+                                : `$${formattedValue}`;
                         }
+                        return formattedValue;
+                    }
                     }
                 />
                 <Tooltip content={<CustomTooltip />} />
                 <Legend />
-                <Bar dataKey="base" stackId="a" fill="#90C2E7" />
-                <Bar dataKey="polygon" stackId="a" fill="#A982ED" />
-                <Bar dataKey="arbitrum" stackId="a" fill="#3454D1" />
-                <Bar dataKey="worldchain" name="world chain" stackId="a" fill="#121212" />
-                <Bar dataKey="optimism" stackId="a" fill="#D1345B" />
-                <Bar dataKey="arbitrum_nova" stackId="a" fill="#FF7700" />
-                <Bar dataKey="celo" stackId="a" fill="#FCFF52" />
-                <Bar dataKey="avalanche" stackId="a" fill="#823038" />
-                <Bar dataKey="bsc" stackId="a" fill="#F0B90B" />
-                <Bar dataKey="linea" stackId="a" fill="#fff069" />
-                <Bar dataKey="ethereum" stackId="a" fill="#777780" />
-                <Bar dataKey="gnosis" stackId="a" fill="#0d8f75" />
-            </BarChart>
+                <Line type="monotone" dataKey="pimlico" stroke="#7115AA" dot={false} />
+                <Line type="monotone" dataKey="alchemy" stroke="#118AB2" dot={false} />
+                <Line type="monotone" dataKey="etherspot" stroke="#FAC748" dot={false} />
+                <Line type="monotone" dataKey="stackup" stroke="#1D2F6F" dot={false} />
+                <Line type="monotone" dataKey="unipass" stroke="#B6D6CC" dot={false} />
+                <Line type="monotone" dataKey="candide" stroke="#F5D491" dot={false} />
+                <Line type="monotone" dataKey="biconomy" stroke="#FF4E17" dot={false} />
+                <Line type="monotone" dataKey="coinbase" stroke="#0052FF" dot={false} />
+                <Line type="monotone" dataKey="Unknown" stroke="#707070" dot={false} />
+                <Line type="monotone" dataKey="particle" stroke="#F386FF" dot={false} />
+                <Line type="monotone" dataKey="cometh" stroke="#5F6D81" dot={false} />
+            </LineChart>
         </ResponsiveContainer>
     );
 }

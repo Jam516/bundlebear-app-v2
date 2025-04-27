@@ -13,18 +13,18 @@ import { SimpleBarChart } from "@/components/simple-bar-chart";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block";
 import { SiteFooter } from "@/components/footer";
+import { EngagementBarChart } from "@/components/engagement-bar-chart";
 
 type tParams = Promise<{ slug: string[] }>;
 
 export const metadata: Metadata = {
   title: "BundleBear",
-  description: "A dashboard tracking the adoption of ERC-4337 smart accounts.",
+  description: "A dashboard tracking the adoption of EVM smart accounts.",
 };
 
 export default async function OverviewPage({ params }: { params: tParams }) {
 
   const parameters = await params;
-  // const [chain = 'all', timeframe = 'week'] = Array.isArray(params.slug) ? params.slug : [];
   const [chain = 'all', timeframe = 'week'] = Array.isArray(parameters.slug) ? parameters.slug : [];
 
   const data = await getOverviewData({ chain, timeframe });
@@ -134,6 +134,17 @@ export default async function OverviewPage({ params }: { params: tParams }) {
             {chain != 'all' ? <SimpleBarChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} /> : <ChainBarChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} usd={true} />}
           </CardContent>
         </Card>
+      </div>
+      <div className="grid gap-4  grid-cols-1 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>{chainlabel + " Active Accounts by " + titleparam + " UserOps Made"}</CardTitle>
+          </CardHeader>
+          <CardContent className="pl-1">
+            <EngagementBarChart data={data.accounts_by_category} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CATEGORY"} />
+          </CardContent>
+        </Card>
+
       </div>
       <Separator />
       <AboutBlock />
