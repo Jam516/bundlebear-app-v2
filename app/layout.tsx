@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
+import { ChainTabs } from "@/components/chain-tabs";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const interSans = Inter({
+  variable: "--font-inter-sans",
   subsets: ["latin"],
 });
 
@@ -24,11 +22,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${interSans.variable} antialiased`} >
+        <SidebarProvider>
+          <AppSidebar />
+          <SidebarTrigger />
+          <div className="flex flex-col">
+            <div className="hidden md:flex flex-1 space-x-4 pl-8 ">
+              <ChainTabs />
+            </div>
+            <div className="relative min-h-screen">
+              {children}
+            </div>
+          </div>
+        </SidebarProvider>
       </body>
     </html>
+    // <html lang="en">
+    // </html>
   );
 }
