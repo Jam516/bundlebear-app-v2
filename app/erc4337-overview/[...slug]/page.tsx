@@ -12,12 +12,14 @@ import { ChainBarChart } from "@/components/chain-bar-chart";
 import { SimpleBarChart } from "@/components/simple-bar-chart";
 import { Separator } from "@/components/ui/separator";
 
+type tParams = Promise<{ slug: string[] }>;
+
 export const metadata: Metadata = {
   title: "BundleBear",
   description: "A dashboard tracking the adoption of ERC-4337 smart accounts.",
 };
 
-export default async function OverviewPage({ params }: { params: { slug: string[] } }) {
+export default async function OverviewPage({ params }: { params: tParams }) {
 
   const parameters = await params;
   // const [chain = 'all', timeframe = 'week'] = Array.isArray(params.slug) ? params.slug : [];
