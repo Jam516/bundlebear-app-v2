@@ -106,7 +106,11 @@ export function ChainBarChart({
                 <p className="label">{`Date: ${label}`}</p>
                 {payload.map((entry: any, index: number) => (
                     <p key={`item-${index}`} style={{ color: entry.color }}>
-                        {`${entry.name}: ${usd ? `$${entry.value.toLocaleString()}` : entry.value.toLocaleString()}`}
+                        {`${entry.name}: ${usd
+                            ? entry.value < 0
+                                ? `-$${Math.abs(entry.value).toLocaleString()}`
+                                : `$${entry.value.toLocaleString()}`
+                            : entry.value.toLocaleString()}`}
                     </p>
                 ))}
             </div>
@@ -139,7 +143,13 @@ export function ChainBarChart({
                         ? toPercentTick
                         : (value: number) => {
                             const formattedValue = formatShortNumber(value);
-                            return usd ? `$${formattedValue}` : formattedValue;
+                            if (usd) {
+                                // Check if the value is negative
+                                return value < 0
+                                    ? `-$${formattedValue.substring(1)}` // Place $ after the negative sign
+                                    : `$${formattedValue}`;
+                            }
+                            return formattedValue;
                         }
                     }
                 />

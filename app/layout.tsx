@@ -35,6 +35,7 @@ export default function RootLayout({
             </div>
           </div>
         </SidebarProvider>
+
       </body>
     </html>
     // <html lang="en">
