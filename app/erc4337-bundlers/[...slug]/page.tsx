@@ -10,11 +10,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block";
 import { SiteFooter } from "@/components/footer";
-import { BundlerBarChart } from "@/components/bundler-bar-chart";
-import { BundlerLineChart } from "@/components/bundler-line-chart";
+import { UnifiedLineChart } from "@/components/unified-line-chart";
 import { MultiopBarChart } from "@/components/multiop-bar-chart";
-import { bundlercolumns } from "@/components/columns"
-import { DataTable } from "@/components/data-table"
+import { UnifiedBarChart } from "@/components/unified-bar-chart";
+import { BUNDLER_BARS } from '@/components/bar-config';
+import { BUNDLER_LINES } from '@/components/line-config';
+import { bundlercolumns } from "@/components/columns";
+import { DataTable } from "@/components/data-table";
 
 type tParams = Promise<{ slug: string[] }>;
 
@@ -52,7 +54,7 @@ export default async function BundlerPage({ params }: { params: tParams }) {
                         <CardTitle>{chainlabel + titleparam + " UserOps Bundled"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
-                        <BundlerBarChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} />
+                        <UnifiedBarChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} barConfig={BUNDLER_BARS} />
                     </CardContent>
                 </Card>
                 <Card>
@@ -60,7 +62,7 @@ export default async function BundlerPage({ params }: { params: tParams }) {
                         <CardTitle>{chainlabel + titleparam + " UserOp Marketshare"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
-                        <BundlerBarChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} isPercentage={true} />
+                        <UnifiedBarChart data={data.userops_chart} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"BUNDLER_NAME"} barConfig={BUNDLER_BARS} isPercentage={true} />
                     </CardContent>
                 </Card>
             </div>
@@ -70,7 +72,7 @@ export default async function BundlerPage({ params }: { params: tParams }) {
                         <CardTitle>{chainlabel + titleparam + " OnChain Revenue"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
-                        <BundlerBarChart data={data.revenue_chart} xaxis={"DATE"} yaxis={"REVENUE"} segment={"BUNDLER_NAME"} usd={true} />
+                        <UnifiedBarChart data={data.revenue_chart} xaxis={"DATE"} yaxis={"REVENUE"} segment={"BUNDLER_NAME"} barConfig={BUNDLER_BARS} usd={true} />
                     </CardContent>
                 </Card>
                 <Card>
@@ -78,7 +80,7 @@ export default async function BundlerPage({ params }: { params: tParams }) {
                         <CardTitle>{chainlabel + titleparam + " Active Accounts"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
-                        <BundlerLineChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"BUNDLER_NAME"} />
+                        <UnifiedLineChart data={data.accounts_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"BUNDLER_NAME"} lineConfig={BUNDLER_LINES} />
                     </CardContent>
                 </Card>
             </div>

@@ -36,7 +36,7 @@ const data = {
                 },
                 {
                     title: "Paymasters",
-                    url: "#",
+                    url: "/erc4337-paymasters/all",
                 },
                 {
                     title: "Account Factories",

@@ -24,7 +24,7 @@ export const bundlercolumns: ColumnDef<Bundler>[] = [
                     variant="ghost"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-left">
                         <p>Total UserOps</p>
                         <p>Bundled</p>
                     </div>
@@ -46,7 +46,7 @@ export const bundlercolumns: ColumnDef<Bundler>[] = [
                     variant="ghost"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-left">
                         <p>Total Bundle</p>
                         <p>Txns Executed</p>
                     </div>
@@ -68,7 +68,7 @@ export const bundlercolumns: ColumnDef<Bundler>[] = [
                     variant="ghost"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-left">
                         <p>Total OnChain</p>
                         <p>Revenue</p>
                     </div>
@@ -108,7 +108,7 @@ export const paymastercolumns: ColumnDef<Paymaster>[] = [
                     variant="ghost"
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
-                    Total UserOps Paid For
+                    Total UserOps Served
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
             )

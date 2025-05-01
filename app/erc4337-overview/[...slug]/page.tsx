@@ -8,7 +8,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ChainBarChart } from "@/components/chain-bar-chart";
+import { UnifiedBarChart } from "@/components/unified-bar-chart";
+import { CHAIN_BARS } from '@/components/bar-config';
 import { SimpleBarChart } from "@/components/simple-bar-chart";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block";
@@ -71,7 +72,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
             <CardTitle>{chainlabel + titleparam + " Active Smart Accounts"}</CardTitle>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} /> : <ChainBarChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} />}
+            {chain != 'all' ? <SimpleBarChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} /> : <UnifiedBarChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} barConfig={CHAIN_BARS} />}
           </CardContent>
         </Card>
         <Card>
@@ -79,7 +80,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
             <CardTitle>{chainlabel + titleparam + " Sucessful UserOps"}</CardTitle>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} /> : <ChainBarChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} />}
+            {chain != 'all' ? <SimpleBarChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} /> : <UnifiedBarChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} barConfig={CHAIN_BARS} />}
           </CardContent>
         </Card>
       </div>
@@ -90,7 +91,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
               <CardTitle>{chainlabel + titleparam + " Active Smart Accounts Marketshare"}</CardTitle>
             </CardHeader>
             <CardContent className="pl-1">
-              <ChainBarChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} isPercentage={true} />
+              <UnifiedBarChart data={data.monthly_active_accounts} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} barConfig={CHAIN_BARS} isPercentage={true} />
             </CardContent>
           </Card>
           <Card>
@@ -98,7 +99,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
               <CardTitle>{chainlabel + titleparam + " Sucessful UserOps Marketshare"}</CardTitle>
             </CardHeader>
             <CardContent className="pl-1">
-              <ChainBarChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} isPercentage={true} />
+              <UnifiedBarChart data={data.monthly_userops} xaxis={"DATE"} yaxis={"NUM_USEROPS"} segment={"CHAIN"} barConfig={CHAIN_BARS} isPercentage={true} />
             </CardContent>
           </Card>
         </div>
@@ -123,7 +124,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
             <CardTitle>{chainlabel + titleparam + " Bundler Revenue"}</CardTitle>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} usd={true} /> : <ChainBarChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} segment={"CHAIN"} usd={true} />}
+            {chain != 'all' ? <SimpleBarChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} usd={true} /> : <UnifiedBarChart data={data.monthly_bundler_revenue} xaxis={"DATE"} yaxis={"REVENUE"} segment={"CHAIN"} barConfig={CHAIN_BARS} usd={true} />}
           </CardContent>
         </Card>
         <Card>
@@ -131,7 +132,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
             <CardTitle>{chainlabel + titleparam + " Paymaster Gas Spend"}</CardTitle>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} /> : <ChainBarChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} usd={true} />}
+            {chain != 'all' ? <SimpleBarChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} usd={true} /> : <UnifiedBarChart data={data.monthly_paymaster_spend} xaxis={"DATE"} yaxis={"GAS_SPENT"} segment={"CHAIN"} barConfig={CHAIN_BARS} usd={true} />}
           </CardContent>
         </Card>
       </div>
