@@ -45,7 +45,7 @@ export function MultiopBarChart({
         <ResponsiveContainer width="100%" height={350}>
             <BarChart
                 data={data}
-                barCategoryGap={10}
+                barCategoryGap={0}
             >
                 <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
                 <XAxis

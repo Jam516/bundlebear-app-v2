@@ -15,10 +15,19 @@ import {
     // Settings2,
     // SquareTerminal,
 } from "lucide-react"
+import Link from "next/link"
 
 import { NavMain } from "./nav-main"
 import { NavResources } from "./nav-resources"
-import { Sidebar, SidebarContent, SidebarRail } from "@/components/ui/sidebar"
+import {
+    Sidebar,
+    SidebarContent,
+    SidebarRail,
+    SidebarHeader,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+} from "@/components/ui/sidebar"
 
 const data = {
     navMain: [
@@ -83,6 +92,21 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
         <Sidebar collapsible="icon" {...props}>
+            <SidebarHeader>
+                <SidebarMenu>
+                    <SidebarMenuItem>
+                        <SidebarMenuButton
+                            asChild
+                            className="data-[slot=sidebar-menu-button]:!p-1.5"
+                        >
+                            <Link href="/erc4337-overview/all">
+                                <img src="/bear.png" className="h-5" alt="BundleBear" />
+                                <span className="text-base font-semibold">BundleBear</span>
+                            </Link>
+                        </SidebarMenuButton>
+                    </SidebarMenuItem>
+                </SidebarMenu>
+            </SidebarHeader>
             <SidebarContent>
                 <NavMain items={data.navMain} />
                 <NavResources projects={data.resources} />

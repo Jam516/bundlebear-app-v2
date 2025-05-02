@@ -191,7 +191,7 @@ export function DynamicBarChart({
                     top: 20, right: 30, left: 20, bottom: 10
                 }}
                 stackOffset={isPercentage ? "expand" : "none"}
-                barCategoryGap={isPercentage ? 0 : 10}
+                barCategoryGap={0}
             >
                 {!isPercentage && (
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />

@@ -130,7 +130,7 @@ export function UnifiedBarChart({
             <BarChart
                 data={transformedData}
                 stackOffset={isPercentage ? "expand" : "none"}
-                barCategoryGap={isPercentage ? 0 : 10}
+                barCategoryGap={0}
             >
                 {!isPercentage && (
                     <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
