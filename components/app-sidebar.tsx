@@ -3,15 +3,17 @@
 import type * as React from "react"
 import {
     // AudioWaveform,
-    // BookOpen,
-    Bot,
+    BookOpen,
+    // Bot,
     // Command,
-    Frame,
+    // Frame,
     // GalleryVerticalEnd,
     // Map,
-    PieChart,
+    LayoutDashboard,
+    List,
+    SquareActivity,
     // Settings2,
-    SquareTerminal,
+    // SquareTerminal,
 } from "lucide-react"
 
 import { NavMain } from "./nav-main"
@@ -23,7 +25,7 @@ const data = {
         {
             title: "ERC-4337",
             url: "/erc4337-overview/all",
-            icon: SquareTerminal,
+            icon: LayoutDashboard,
             isActive: true,
             items: [
                 {
@@ -40,40 +42,40 @@ const data = {
                 },
                 {
                     title: "Account Factories",
-                    url: "#",
+                    url: "/erc4337-factories/all",
                 },
                 {
                     title: "Apps",
-                    url: "#",
+                    url: "/erc4337-apps/all",
                 },
             ],
         },
         {
             title: "ERC-7702",
             url: "/erc7702-overview/all",
-            icon: Bot,
+            icon: SquareActivity,
             items: [
                 {
                     title: "Overview",
                     url: "/erc7702-overview/all",
                 },
-                {
-                    title: "Apps",
-                    url: "#",
-                },
+                // {
+                //     title: "Apps",
+                //     url: "#",
+                // },
             ],
         },
     ],
     resources: [
         {
             name: "Research",
-            url: "#",
-            icon: Frame,
+            url: "/research",
+            icon: BookOpen,
         },
         {
             name: "Operator Registry",
-            url: "#",
-            icon: PieChart,
+            url: "https://github.com/Jam516/BundleBear",
+            icon: List,
         },
     ],
 }

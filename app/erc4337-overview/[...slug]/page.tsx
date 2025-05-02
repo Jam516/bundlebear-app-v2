@@ -9,12 +9,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { UnifiedBarChart } from "@/components/unified-bar-chart";
-import { CHAIN_BARS } from '@/components/bar-config';
+import { CHAIN_BARS, ENGAGEMENT_BARS } from '@/components/bar-config';
 import { SimpleBarChart } from "@/components/simple-bar-chart";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block";
 import { SiteFooter } from "@/components/footer";
-import { EngagementBarChart } from "@/components/engagement-bar-chart";
 
 type tParams = Promise<{ slug: string[] }>;
 
@@ -142,7 +141,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
             <CardTitle>{chainlabel + " Active Accounts by " + titleparam + " UserOps Made"}</CardTitle>
           </CardHeader>
           <CardContent className="pl-1">
-            <EngagementBarChart data={data.accounts_by_category} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CATEGORY"} />
+            <UnifiedBarChart data={data.accounts_by_category} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CATEGORY"} barConfig={ENGAGEMENT_BARS} />
           </CardContent>
         </Card>
 
