@@ -18,6 +18,10 @@ type DataEntry = {
     NUM_OPS: number;
     PROJECT: string;
 };
+type TransformedEntry = {
+    DATE: string;
+    [key: string]: string | number;
+};
 
 interface DynamicBarChartProps {
     data: DataEntry[];
@@ -72,7 +76,7 @@ export function DynamicBarChart2({
     // Transform data for Recharts
     const { transformedData, uniqueProjects } = useMemo(() => {
         // Group by date
-        const dateGroups: Record<string, Record<string, number>> = {};
+        const dateGroups: Record<string, TransformedEntry> = {};
 
         // First, collect all unique projects
         const projectSet = new Set<string>();
@@ -83,12 +87,12 @@ export function DynamicBarChart2({
             projectSet.add(entry.PROJECT);
 
             if (!dateGroups[formattedDate]) {
-                dateGroups[formattedDate] = { date: formattedDate };
+                dateGroups[formattedDate] = { DATE: formattedDate };
             }
 
             // Add value to the correct project for this date
             dateGroups[formattedDate][entry.PROJECT] =
-                (dateGroups[formattedDate][entry.PROJECT] || 0) + entry.NUM_OPS;
+                (dateGroups[formattedDate][entry.PROJECT] as number || 0) + entry.NUM_OPS;
         });
 
         // Convert to array for Recharts
@@ -96,7 +100,7 @@ export function DynamicBarChart2({
 
         // Sort by date
         transformedData.sort((a, b) => {
-            return moment(a.date, dateFormat).valueOf() - moment(b.date, dateFormat).valueOf();
+            return moment(a.DATE, dateFormat).valueOf() - moment(b.DATE, dateFormat).valueOf();
         });
 
         return {
@@ -197,7 +201,7 @@ export function DynamicBarChart2({
                     <CartesianGrid strokeDasharray="3 3" vertical={false} />
                 )}
                 <XAxis
-                    dataKey="date"
+                    dataKey="DATE"
                     stroke="#888888"
                     fontSize={10}
                     tickLine={false}
