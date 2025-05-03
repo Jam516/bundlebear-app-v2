@@ -42,7 +42,7 @@ export default async function PaymasterPage({ params }: { params: tParams }) {
     return (
         <div className="flex flex-col space-y-4 p-8 font-[family-name:var(--font-inter-sans)]">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Paymasters</h2>
+                <h2 className="text-3xl font-bold tracking-tight">ERC-4337 Paymasters</h2>
             </div>
             <div className="flex justify-center">
                 <DataTable columns={paymastercolumns} data={data.leaderboard} entity={false} />

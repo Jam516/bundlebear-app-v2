@@ -7,7 +7,7 @@ export default function Loading() {
             <div className="hidden md:flex flex-col space-y-4 p-8 font-[family-name:var(--font-inter-sans)]">
 
                 <div className="flex items-center justify-between">
-                    <h2 className="text-3xl font-bold tracking-tight">Paymasters</h2>
+                    <h2 className="text-3xl font-bold tracking-tight">ERC-4337 Paymasters</h2>
                 </div>
                 <div className="flex justify-center">
                     <Skeleton className="h-[462px]" />

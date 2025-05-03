@@ -39,7 +39,7 @@ export default async function FactoryPage({ params }: { params: tParams }) {
     return (
         <div className="flex flex-col space-y-4 p-8 font-[family-name:var(--font-inter-sans)]">
             <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-bold tracking-tight">Account Factories</h2>
+                <h2 className="text-3xl font-bold tracking-tight">ERC-4337 Account Factories</h2>
             </div>
             <div className="flex justify-center">
                 <DataTable columns={deployercolumns} data={data.leaderboard} entity={false} />
