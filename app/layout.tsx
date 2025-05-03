@@ -14,11 +14,11 @@ const interSans = Inter({
 export const metadata: Metadata = {
   title: {
     default: "BundleBear",
-    template: `%s - ERC4337 Data`,
+    template: `%s - Smart Wallet Data`,
   },
-  description: "ERC4337 Data",
+  description: "Smart Wallet Data",
   keywords: [
-    "ERC4337",
+    "ERC-4337",
     "smart accounts",
     "account abstraction",
     "smart contract wallets",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.bundlebear.com",
     title: "BundleBear",
-    description: "ERC4337 Data Analytics",
+    description: "Smart Wallet Data",
     siteName: "BundleBear",
     images: [
       {
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "BundleBear",
-    description: "Open and transparent ERC4337 Data",
+    description: "Open and transparent Smart Wallet Data",
     images: ["https://i.imgur.com/v4tp3ws.png"],
     creator: "@0xKofi",
   },
