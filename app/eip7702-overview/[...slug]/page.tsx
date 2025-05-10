@@ -43,7 +43,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         <StatCard
-          title="Current Smart Accounts"
+          title="Total Smart Accounts"
           content={data.stat_live_smart_wallets[0].LIVE_SMART_WALLETS.toLocaleString()}
           subheader="Smart Accounts"
           icon={
@@ -64,6 +64,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           } />
       </div>
+      {/* <p>Note: Total Smart Accounts will be lower than Total Authorizations because </p> */}
       <TimeSelect />
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
