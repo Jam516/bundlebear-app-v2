@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description: "Smart Wallet Data",
   keywords: [
     "ERC-4337",
+    "EIP-7702",
     "smart accounts",
     "account abstraction",
     "smart contract wallets",
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "BundleBear",
     images: [
       {
-        url: "https://i.imgur.com/v4tp3ws.png",
+        url: "https://i.imgur.com/w0fV9Bx.png",
         width: 1200,
         height: 630,
         alt: "BundleBear",
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BundleBear",
     description: "Open and transparent Smart Wallet Data",
-    images: ["https://i.imgur.com/v4tp3ws.png"],
+    images: ["https://i.imgur.com/w0fV9Bx.png"],
     creator: "@0xKofi",
   },
 }
