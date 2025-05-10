@@ -10,7 +10,7 @@ export default function Loading() {
                     <h2 className="text-3xl font-bold tracking-tight">ERC-4337 Bundlers</h2>
                 </div>
                 <div className="flex justify-center">
-                    <Skeleton className="h-[462px]" />
+                    <Skeleton className="h-[462px] w-1/2" />
                 </div>
                 <div className="grid gap-4 grid-cols-1 md:grid-cols-2 ">
                     <Skeleton className="h-[462px]" />

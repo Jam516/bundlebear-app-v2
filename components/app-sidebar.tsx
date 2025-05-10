@@ -60,13 +60,13 @@ const data = {
             ],
         },
         {
-            title: "ERC-7702",
-            url: "/erc7702-overview/all",
+            title: "EIP-7702",
+            url: "/eip7702-overview/all",
             icon: SquareActivity,
             items: [
                 {
                     title: "Overview",
-                    url: "/erc7702-overview/all",
+                    url: "/eip7702-overview/all",
                 },
                 // {
                 //     title: "Apps",

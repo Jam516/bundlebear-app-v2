@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { usePathname } from 'next/navigation'
 
-export function ChainTabs() {
+export function ChainTabs4337() {
     const router = useRouter();
     const pathname = usePathname();
     const [activeTab, setActiveTab] = useState("all");
@@ -26,8 +26,11 @@ export function ChainTabs() {
     }, [pathname]);
 
     const segments = pathname.split("/");
-    if (segments[1] === 'research' || segments[1] === 'posts' || segments[1] === 'year-in-review' || segments[1] === 'sponsor') {
-        return <div></div>;
+
+    const visibleRoutes = ['erc4337-apps', 'erc4337-bundlers', 'erc4337-paymasters', 'erc4337-factories', 'erc4337-overview'];
+
+    if (!visibleRoutes.includes(segments[1])) {
+        return null; // Return null instead of empty div for cleaner rendering
     }
 
     return (

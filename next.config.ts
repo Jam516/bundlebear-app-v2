@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/',
+        destination: '/eip7702-overview/all',
+        permanent: true,
+      },
+      {
+        source: '/overview/all',
         destination: '/erc4337-overview/all',
         permanent: true,
       },

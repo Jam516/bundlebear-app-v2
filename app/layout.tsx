@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
-import { ChainTabs } from "@/components/chain-tabs";
+import { ChainTabs4337 } from "@/components/erc4337-chain-tabs";
+import { ChainTabs7702 } from "@/components/erc7702-chain-tabs";
 import { Analytics } from "@vercel/analytics/react"
 
 const interSans = Inter({
@@ -69,7 +70,8 @@ export default function RootLayout({
           <SidebarTrigger />
           <div className="flex flex-col">
             <div className="hidden md:flex flex-1 space-x-4 pl-8 ">
-              <ChainTabs />
+              <ChainTabs4337 />
+              <ChainTabs7702 />
             </div>
             <div className="relative min-h-screen">
               {children}
@@ -79,7 +81,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-    // <html lang="en">
-    // </html>
   );
 }

@@ -84,3 +84,11 @@ export const FACTORY_BARS: BarConfig[] = [
     { dataKey: "fun.xyz", fill: "#3D3D3D" },
     { dataKey: "Unknown", fill: "#707070" }
 ];
+
+export const CHAIN_BARS_7702: BarConfig[] = [
+    { dataKey: "ethereum", fill: "#777780" },
+    { dataKey: "bsc", fill: "#F0B90B" },
+    { dataKey: "base", fill: "#90C2E7" },
+    { dataKey: "optimism", fill: "#D1345B" },
+    { dataKey: "gnosis", fill: "#0d8f75" }
+];
