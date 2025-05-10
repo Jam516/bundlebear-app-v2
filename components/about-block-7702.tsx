@@ -11,7 +11,7 @@ export function AboutBlock() {
             <div className="flex flex-col items-left">
                 <h2 className="font-bold ">What is an EIP-7702 Authorization?</h2>
                 <p>Regular EOA wallets upgrade to EIP-7702 smart accounts by authorizing a contract. The upgraded wallet has a &quot;delegation indicator&quot; that points to the authorized contract. When a transaction is sent to the EOA, it executes the code of the authorized contract.</p>
-                <p>To downgrade back to a regular EOA the wallet authorizes the burn address.</p>
+                <p>To downgrade back to a regular EOA, the wallet authorizes the burn address.</p>
                 <p>- </p>
                 <h2 className="font-bold ">What is a Set Code transaction?</h2>
                 <p>A transaction where Authorizations are executed onchain, thereby upgrading EOAs to smart accounts. One set code txn can contain multiple Authorizations.</p>

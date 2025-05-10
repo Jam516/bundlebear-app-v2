@@ -8,7 +8,9 @@ interface ChainData {
     stat_authorizations: { NUM_AUTHORIZATIONS: number }[],
     stat_set_code_txns: { NUM_SET_CODE_TXNS: number }[],
     authorizations_chart: any[],
-    set_code_chart: any[]
+    set_code_chart: any[],
+    live_smart_wallets_chart: any[],
+    live_authorized_contracts_chart: any[]
 }
 
 export async function getOverviewData7702({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {

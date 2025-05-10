@@ -90,5 +90,6 @@ export const CHAIN_BARS_7702: BarConfig[] = [
     { dataKey: "bsc", fill: "#F0B90B" },
     { dataKey: "base", fill: "#90C2E7" },
     { dataKey: "optimism", fill: "#D1345B" },
-    { dataKey: "gnosis", fill: "#0d8f75" }
+    { dataKey: "gnosis", fill: "#0d8f75" },
+    { dataKey: "cross-chain", fill: "#823038" }
 ];

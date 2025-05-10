@@ -1,4 +1,7 @@
-import { Skeleton } from "@/components/ui/skeleton"
+import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
+import { AboutBlock } from "@/components/about-block-7702";
+import { SiteFooter } from "@/components/footer";
 
 export default function Loading() {
 
@@ -18,7 +21,9 @@ export default function Loading() {
                     <Skeleton className="h-[462px]" />
                     <Skeleton className="h-[462px]" />
                 </div>
-
+                <Separator />
+                <AboutBlock />
+                <SiteFooter />
             </div>
         </>
 

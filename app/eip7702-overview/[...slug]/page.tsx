@@ -9,7 +9,9 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { UnifiedBarChart } from "@/components/unified-bar-chart";
+import { UnifiedAreaChart } from "@/components/unified-area-chart";
 import { CHAIN_BARS_7702 } from '@/components/bar-config';
+import { CHAIN_AREAS_7702 } from "@/components/area-config";
 import { SimpleBarChart } from "@/components/simple-bar-chart";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block-7702";
@@ -43,7 +45,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         <StatCard
-          title="Total Smart Accounts"
+          title="Smart Accounts"
           content={data.stat_live_smart_wallets[0].LIVE_SMART_WALLETS.toLocaleString()}
           subheader="Smart Accounts"
           icon={
@@ -64,8 +66,26 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           } />
       </div>
-      {/* <p>Note: Total Smart Accounts will be lower than Total Authorizations because </p> */}
-      <TimeSelect />
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>{"Smart Accounts"}</CardTitle>
+          </CardHeader>
+          <CardContent className="pl-1">
+            {chain != 'all' ? <SimpleBarChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} /> : <UnifiedAreaChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>{"In-use Authorized Contracts"}</CardTitle>
+          </CardHeader>
+          <CardContent className="pl-1">
+            {chain != 'all' ? <SimpleBarChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} /> : <UnifiedAreaChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
+          </CardContent>
+        </Card>
+      </div>
+      <p className="text-sm text-muted-foreground">Note: The number of smart accounts can rise and fall over time as users upgrade and downgrade their wallets via authorizations.</p>
+      <TimeSelect defaultTime="day" />
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -77,7 +97,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>{chainlabel + titleparam + " Set Code Txns"}</CardTitle>
+            <CardTitle>{chainlabel + titleparam + " Set Code Transactions"}</CardTitle>
           </CardHeader>
           <CardContent className="pl-1">
             {chain != 'all' ? <SimpleBarChart data={data.set_code_chart} xaxis={"DATE"} yaxis={"NUM_SET_CODE_TXNS"} /> : <UnifiedBarChart data={data.set_code_chart} xaxis={"DATE"} yaxis={"NUM_SET_CODE_TXNS"} segment={"CHAIN"} barConfig={CHAIN_BARS_7702} />}

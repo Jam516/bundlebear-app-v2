@@ -11,10 +11,16 @@ import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from "react";
 
-export function TimeSelect() {
+type TimeOption = 'day' | 'week' | 'month';
+
+interface TimeSelectProps {
+    defaultTime?: TimeOption;
+}
+
+export function TimeSelect({ defaultTime = 'week' }: TimeSelectProps) {
     const router = useRouter();
     const pathname = usePathname();
-    const [activeTab, setActiveTab] = useState("week");
+    const [activeTab, setActiveTab] = useState<TimeOption>(defaultTime);
 
     const handleSelect = (newValue: string) => {
         const segments = pathname.split("/");
@@ -24,13 +30,13 @@ export function TimeSelect() {
     };
 
     useEffect(() => {
-        const slugTime = pathname.split("/")[3];
+        const slugTime = pathname.split("/")[3] as TimeOption | undefined;
         if (slugTime === undefined) {
-            setActiveTab("week");
+            setActiveTab(defaultTime);
         } else {
             setActiveTab(slugTime);
         }
-    }, [pathname]);
+    }, [pathname, defaultTime]);
 
     return (
         <Select onValueChange={handleSelect} value={activeTab}>
