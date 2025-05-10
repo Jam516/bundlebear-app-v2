@@ -84,7 +84,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
           </CardContent>
         </Card>
       </div>
-      <p className="text-sm text-muted-foreground">Note: The number of smart accounts can rise and fall over time as users upgrade and downgrade their wallets via authorizations.</p>
+      <p className="text-sm text-muted-foreground">Note: The number of smart accounts will rise and fall over time as users sign authorizations that upgrade or downgrade their wallets.</p>
       <TimeSelect defaultTime="day" />
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
