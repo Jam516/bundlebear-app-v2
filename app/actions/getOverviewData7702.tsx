@@ -17,7 +17,7 @@ interface ChainData {
 
 export async function getOverviewData7702({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {
     // noStore();
-    const response = await fetch(`https://bundlebear-api.onrender.com/eip7702-overview?chain=${chain}&timeframe=${timeframe}`, { next: { revalidate: 3600 } });
+    const response = await fetch(`https://bundlebear-api.onrender.com/eip7702-overview?chain=${chain}&timeframe=${timeframe}`);
     // , { next: { revalidate: 3600 } }
 
     if (!response.ok) {
