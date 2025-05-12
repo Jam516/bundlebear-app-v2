@@ -1,5 +1,3 @@
-import { unstable_noStore as noStore } from "next/cache";
-
 interface OverviewDataParams {
     chain: string;
     timeframe: string;
@@ -16,7 +14,6 @@ interface ChainData {
 }
 
 export async function getOverviewData7702({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {
-    noStore();
     const response = await fetch(`https://bundlebear-api.onrender.com/eip7702-overview?chain=${chain}&timeframe=${timeframe}`);
     // , { next: { revalidate: 3600 } }
 
@@ -25,6 +22,11 @@ export async function getOverviewData7702({ chain, timeframe }: OverviewDataPara
     }
 
     const chainData: ChainData = await response.json();
+    // console.log(chainData.live_smart_wallets_chart);
+    // const entriesForMay11 = chainData.live_smart_wallets_chart.filter(
+    //     entry => entry.DATE === "2025-05-11"
+    // );
+    // console.log("Entries for May 11th:", entriesForMay11);
 
     return chainData;
 }
