@@ -116,7 +116,7 @@ export const paymastercolumns: ColumnDef<Paymaster>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("NUM_USEROPS"))
 
-            return <div className="text-center font-medium">{amount}</div>
+            return <div className="text-center font-medium">{amount.toLocaleString()}</div>
         },
     },
     {
@@ -170,7 +170,7 @@ export const deployercolumns: ColumnDef<Deployer>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("NUM_ACCOUNTS"))
 
-            return <div className="text-center font-medium">{amount}</div>
+            return <div className="text-center font-medium">{amount.toLocaleString()}</div>
         },
     },
 ]
@@ -202,7 +202,7 @@ export const appcolumns: ColumnDef<Apps>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("NUM_UNIQUE_SENDERS"))
 
-            return <div className="text-center font-medium">{amount}</div>
+            return <div className="text-center font-medium">{amount.toLocaleString()}</div>
         },
     },
     {
@@ -221,7 +221,7 @@ export const appcolumns: ColumnDef<Apps>[] = [
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("NUM_OPS"))
 
-            return <div className="text-center font-medium">{amount}</div>
+            return <div className="text-center font-medium">{amount.toLocaleString()}</div>
         },
     },
 ]
@@ -257,6 +257,39 @@ export const paymastermincolumns: ColumnDef<PaymasterMin>[] = [
             }).format(amount)
 
             return <div className="text-center font-medium">{formatted}</div>
+        },
+    },
+]
+
+export type AuthContracts = {
+    AUTHORIZED_CONTRACT: string
+    NUM_WALLETS: number
+}
+
+export const authcontractcolumns: ColumnDef<AuthContracts>[] = [
+    {
+        accessorKey: "AUTHORIZED_CONTRACT",
+        header: "Authorized Contract",
+    },
+    {
+        accessorKey: "NUM_WALLETS",
+        header: ({ column }) => {
+            return (
+                <Button
+                    variant="ghost"
+                    onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+                >
+                    <div className="flex flex-col text-left">
+                        <p>Live Smart Wallets</p>
+                    </div>
+                    <ArrowUpDown className="ml-2 h-4 w-4" />
+                </Button>
+            )
+        },
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("NUM_WALLETS"))
+
+            return <div className="pl-4">{amount.toLocaleString()}</div>
         },
     },
 ]

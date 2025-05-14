@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: '/erc4337-overview/all',
         permanent: true,
       },
+      {
+        source: '/overview/all/month',
+        destination: '/erc4337-overview/all/month',
+        permanent: true,
+      },
     ]
   },
   eslint: {

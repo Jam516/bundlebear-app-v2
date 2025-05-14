@@ -63,10 +63,15 @@ const data = {
             title: "EIP-7702",
             url: "/eip7702-overview/all",
             icon: SquareActivity,
+            isActive: true,
             items: [
                 {
                     title: "Overview",
                     url: "/eip7702-overview/all",
+                },
+                {
+                    title: "Authorized Contracts",
+                    url: "/eip7702-authorized-contracts/all",
                 },
                 // {
                 //     title: "Apps",
