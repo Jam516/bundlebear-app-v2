@@ -27,7 +27,7 @@ export function ChainTabs7702() {
 
     const segments = pathname.split("/");
 
-    const visibleRoutes = ['eip7702-overview'];
+    const visibleRoutes = ['eip7702-overview', 'eip7702-authorized-contracts'];
 
     if (!visibleRoutes.includes(segments[1])) {
         return null; // Return null instead of empty div for cleaner rendering
