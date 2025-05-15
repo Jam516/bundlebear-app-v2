@@ -34,6 +34,7 @@ export const PAYMASTER_BARS: BarConfig[] = [
     { dataKey: "candide", fill: "#F5D491" },
     { dataKey: "send", fill: "#2A9D8F" },
     { dataKey: "cometh", fill: "#5F6D81" },
+    { dataKey: "ambire", fill: "#A36EFD" },
     { dataKey: "nani", fill: "#FFC6FF" },
     { dataKey: "etherspot", fill: "#FAC748" },
     { dataKey: "Unknown", fill: "#707070" }
@@ -80,6 +81,7 @@ export const FACTORY_BARS: BarConfig[] = [
     { dataKey: "nani", fill: "#FFC6FF" },
     { dataKey: "etherspot", fill: "#FAC748" },
     { dataKey: "candide", fill: "#F5D491" },
+    { dataKey: "ambire", fill: "#A36EFD" },
     { dataKey: "banana", fill: "#F8E9E9" },
     { dataKey: "fun.xyz", fill: "#3D3D3D" },
     { dataKey: "Unknown", fill: "#707070" }

@@ -30,5 +30,6 @@ export const PAYMASTER_LINES: LineConfig[] = [
     { dataKey: "coinbase", stroke: "#0052FF" },
     { dataKey: "Unknown", stroke: "#707070" },
     { dataKey: "circle", stroke: "#008000" },
+    { dataKey: "ambire", stroke: "#A36EFD" },
     { dataKey: "nani", stroke: "#FFC6FF" }
 ];
