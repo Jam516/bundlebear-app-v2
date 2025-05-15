@@ -1,16 +1,17 @@
 import { getAuthContractData } from "@/app/actions/getAuthContractData";
 import { Metadata } from "next";
 // import { TimeSelect } from "@/components/time-select";
-// import {
-//     Card,
-//     CardContent,
-//     CardHeader,
-//     CardTitle,
-// } from "@/components/ui/card";
+import {
+    Card,
+    CardContent,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block-7702";
 import { SiteFooter } from "@/components/footer";
-// import { UnifiedBarChart } from "@/components/unified-bar-chart";
+import { DynamicAreaChart } from "@/components/dynamic-area-chart";
+import { SimpleBarChart } from "@/components/simple-bar-chart";
 // import { FACTORY_BARS } from '@/components/bar-config';
 import { authcontractcolumns } from "@/components/columns";
 import { DataTable } from "@/components/data-table";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default async function AuthContractPage({ params }: { params: tParams }) {
 
     const parameters = await params;
-    const [chain = 'all', timeframe = 'week'] = Array.isArray(parameters.slug) ? parameters.slug : [];
+    const [chain = 'all', timeframe = 'day'] = Array.isArray(parameters.slug) ? parameters.slug : [];
 
     const data = await getAuthContractData({ chain, timeframe });
 
@@ -34,7 +35,7 @@ export default async function AuthContractPage({ params }: { params: tParams }) 
     //         timeframe === 'month' ? 'Monthly' :
     //             'Weekly';
 
-    // const chainlabel = chain === 'all' ? " " : `${chain.charAt(0).toUpperCase() + chain.slice(1)} `;
+    const chainlabel = chain === 'all' ? " " : `${chain.charAt(0).toUpperCase() + chain.slice(1)} `;
 
     return (
         <div className="flex flex-col space-y-4 p-8 font-[family-name:var(--font-inter-sans)]">
@@ -46,6 +47,16 @@ export default async function AuthContractPage({ params }: { params: tParams }) 
             </div>
             <div className="flex justify-center">
                 <DataTable columns={authcontractcolumns} data={data.leaderboard} entity={false} />
+            </div>
+            <div className="grid gap-4 grid-cols-1">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{chainlabel + " Live Smart Accounts"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-1">
+                        <DynamicAreaChart data={data.live_smart_wallets_chart} />
+                    </CardContent>
+                </Card>
             </div>
             {/* <TimeSelect />
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">

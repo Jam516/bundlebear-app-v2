@@ -5,6 +5,7 @@ interface AuthContractDataParams {
 
 interface AuthContractData {
     leaderboard: any[],
+    live_smart_wallets_chart: any[]
 }
 
 export async function getAuthContractData({ chain, timeframe }: AuthContractDataParams): Promise<AuthContractData> {
