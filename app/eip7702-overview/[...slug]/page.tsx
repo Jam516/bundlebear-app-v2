@@ -45,7 +45,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         <StatCard
-          title="Smart Accounts"
+          title="Live Smart Accounts"
           content={data.stat_live_smart_wallets[0].LIVE_SMART_WALLETS.toLocaleString()}
           subheader="Smart Accounts"
           icon={
@@ -69,7 +69,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>{"Smart Accounts"}</CardTitle>
+            <CardTitle>{"Live Smart Accounts"}</CardTitle>
           </CardHeader>
           <CardContent className="pl-1">
             {chain != 'all' ? <SimpleBarChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} /> : <UnifiedAreaChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
@@ -84,7 +84,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
           </CardContent>
         </Card>
       </div>
-      <p className="text-sm text-muted-foreground">Note: The number of smart accounts will rise and fall over time as users sign authorizations that upgrade or downgrade their wallets.</p>
+      <p className="text-sm text-muted-foreground">Note: The number of live smart accounts will rise and fall over time as users sign authorizations that upgrade or downgrade their wallets.</p>
       <TimeSelect defaultTime="day" />
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>

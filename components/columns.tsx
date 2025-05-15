@@ -280,7 +280,7 @@ export const authcontractcolumns: ColumnDef<AuthContracts>[] = [
                     onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
                 >
                     <div className="flex flex-col text-left">
-                        <p>Live Smart Wallets</p>
+                        <p>Live Smart Accounts</p>
                     </div>
                     <ArrowUpDown className="ml-2 h-4 w-4" />
                 </Button>
