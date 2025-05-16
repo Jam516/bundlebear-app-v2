@@ -45,7 +45,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         <StatCard
-          title="Live Smart Accounts"
+          title="Currently Live Smart Accounts"
           content={data.stat_live_smart_wallets[0].LIVE_SMART_WALLETS.toLocaleString()}
           subheader="Smart Accounts"
           icon={

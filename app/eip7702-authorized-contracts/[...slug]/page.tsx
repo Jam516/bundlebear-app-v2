@@ -51,7 +51,7 @@ export default async function AuthContractPage({ params }: { params: tParams }) 
             <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
-                        <CardTitle>{chainlabel + " Live Smart Accounts"}</CardTitle>
+                        <CardTitle>{chainlabel + " Live Smart Accounts by Authorized Contract"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
                         <DynamicAreaChart data={data.live_smart_wallets_chart} />
