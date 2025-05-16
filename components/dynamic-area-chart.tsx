@@ -219,12 +219,12 @@ export function DynamicAreaChart({
                     <Area
                         key={project}
                         dataKey={project}
-                        stackId="a"
+                        stackId="1"
                         name={project}
                         fill={colorMap[project] || stringToColor(project)}
                         stroke={colorMap[project] || stringToColor(project)}
                         type={curveType}
-                        fillOpacity={0.8}
+                    // fillOpacity={0.8}
                     />
                 ))}
             </AreaChart>

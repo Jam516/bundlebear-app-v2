@@ -130,6 +130,7 @@ export function UnifiedAreaChart({
         <ResponsiveContainer width="100%" height={350}>
             <AreaChart
                 data={transformedData}
+                stackOffset={isPercentage ? "expand" : "none"}
             >
                 {!isPercentage && (
                     <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />

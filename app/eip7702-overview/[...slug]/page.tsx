@@ -84,7 +84,32 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
           </CardContent>
         </Card>
       </div>
-      <p className="text-sm text-muted-foreground">Note: The number of &quot;live&quot; smart accounts changes over time as users sign authorizations that either upgrade or downgrade their wallets.</p>
+      <p className="text-sm text-muted-foreground">Live smart accounts = Wallets that are authorizing a contract at that point in time. Authorizing a contract &quot;upgrades&quot; the wallet to a smart account.</p>
+      {chain === 'all' ?
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>{"Live Smart Accounts Market Share"}</CardTitle>
+            </CardHeader>
+            <CardContent className="pl-1">
+              <UnifiedAreaChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} isPercentage={true} />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>{"In-use Authorized Contracts Market Share"}</CardTitle>
+            </CardHeader>
+            <CardContent className="pl-1">
+              <UnifiedAreaChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} isPercentage={true} />
+            </CardContent>
+          </Card>
+        </div>
+        :
+        <div className="grid gap-4 grid-cols-1  md:grid-cols-2">
+
+        </div>
+      }
+
       <TimeSelect defaultTime="day" />
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
@@ -104,6 +129,30 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
           </CardContent>
         </Card>
       </div>
+      {chain === 'all' ?
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>{"Authorizations Market Share"}</CardTitle>
+            </CardHeader>
+            <CardContent className="pl-1">
+              <UnifiedBarChart data={data.authorizations_chart} xaxis={"DATE"} yaxis={"NUM_AUTHORIZATIONS"} segment={"CHAIN"} barConfig={CHAIN_BARS_7702} isPercentage={true} />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>{"Set Code Transactions Market Share"}</CardTitle>
+            </CardHeader>
+            <CardContent className="pl-1">
+              <UnifiedBarChart data={data.set_code_chart} xaxis={"DATE"} yaxis={"NUM_SET_CODE_TXNS"} segment={"CHAIN"} barConfig={CHAIN_BARS_7702} isPercentage={true} />
+            </CardContent>
+          </Card>
+        </div>
+        :
+        <div className="grid gap-4 grid-cols-1  md:grid-cols-2">
+
+        </div>
+      }
       <Separator />
       <AboutBlock />
       <SiteFooter />

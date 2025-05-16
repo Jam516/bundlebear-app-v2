@@ -48,7 +48,7 @@ export default async function AuthContractPage({ params }: { params: tParams }) 
             <div className="flex justify-center">
                 <DataTable columns={authcontractcolumns} data={data.leaderboard} entity={false} />
             </div>
-            <div className="grid gap-4 grid-cols-1">
+            <div className="grid grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + " Live Smart Accounts by Authorized Contract"}</CardTitle>
@@ -57,6 +57,7 @@ export default async function AuthContractPage({ params }: { params: tParams }) 
                         <DynamicAreaChart data={data.live_smart_wallets_chart} />
                     </CardContent>
                 </Card>
+
             </div>
             {/* <TimeSelect />
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
