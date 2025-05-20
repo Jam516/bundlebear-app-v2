@@ -41,7 +41,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold tracking-tight">ERC-4337 Metrics</h2>
       </div>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-4">
         <StatCard
           title="Total UserOps"
           content={data.userops[0].NUM_USEROPS.toLocaleString()}
@@ -62,6 +62,13 @@ export default async function OverviewPage({ params }: { params: tParams }) {
           subheader="Gas Covered"
           icon={
             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          } />
+        <StatCard
+          title="Accounts with 1+ Userops"
+          content={data.accounts[0].NUM_ACCOUNTS.toLocaleString()}
+          subheader="Gas Covered"
+          icon={
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           } />
       </div>
       <TimeSelect />

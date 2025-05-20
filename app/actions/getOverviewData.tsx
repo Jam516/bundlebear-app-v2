@@ -6,7 +6,7 @@ interface OverviewDataParams {
 }
 
 interface ChainData {
-    deployments: { NUM_DEPLOYMENTS: number }[],
+    accounts: { NUM_ACCOUNTS: number }[],
     userops: { NUM_USEROPS: number }[],
     transactions: { NUM_TXNS: number }[],
     paymaster_spend: { GAS_SPENT: number }[],
