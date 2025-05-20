@@ -66,7 +66,7 @@ export default async function OverviewPage({ params }: { params: tParams }) {
         <StatCard
           title="Accounts with 1+ Userops"
           content={data.accounts[0].NUM_ACCOUNTS.toLocaleString()}
-          subheader="Gas Covered"
+          subheader="Accounts"
           icon={
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           } />
