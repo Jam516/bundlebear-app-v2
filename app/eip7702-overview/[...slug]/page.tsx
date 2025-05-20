@@ -7,6 +7,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
+  CardDescription
 } from "@/components/ui/card";
 import { UnifiedBarChart } from "@/components/unified-bar-chart";
 import { UnifiedAreaChart } from "@/components/unified-area-chart";
@@ -70,6 +71,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
         <Card>
           <CardHeader>
             <CardTitle>{"Live Smart Accounts"}</CardTitle>
+            <CardDescription>Wallets that have an active 7702 authorization</CardDescription>
           </CardHeader>
           <CardContent className="pl-1">
             {chain != 'all' ? <SimpleBarChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} /> : <UnifiedAreaChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
@@ -78,13 +80,13 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
         <Card>
           <CardHeader>
             <CardTitle>{"In-use Authorized Contracts"}</CardTitle>
+            <CardDescription>Contracts that are authorized by at least one wallet</CardDescription>
           </CardHeader>
           <CardContent className="pl-1">
             {chain != 'all' ? <SimpleBarChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} /> : <UnifiedAreaChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
           </CardContent>
         </Card>
       </div>
-      <p className="text-sm text-muted-foreground">Live smart accounts = Wallets that are authorizing a contract at that point in time. Authorizing a contract &quot;upgrades&quot; the wallet to a smart account.</p>
       {chain === 'all' ?
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
           <Card>
