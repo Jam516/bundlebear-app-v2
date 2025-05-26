@@ -87,6 +87,24 @@ export default async function BundlerPage({ params }: { params: tParams }) {
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
+                        <CardTitle>{chainlabel + titleparam + " Bundle Txns Failed due to Frontrunning"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-1">
+                        <UnifiedBarChart data={data.frontrun_chart} xaxis={"DATE"} yaxis={"NUM_BUNDLES"} segment={"BUNDLER_NAME"} barConfig={BUNDLER_BARS} />
+                    </CardContent>
+                </Card>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{chainlabel + titleparam + " % Bundle Txns Frontran"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-1">
+                        <MultiopBarChart data={data.frontrun_pct_chart} xaxis={"DATE"} yaxis={"PCT_FRONTRUN"} />
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+                <Card>
+                    <CardHeader>
                         <CardTitle>{chainlabel + " Multi-UserOp Bundles " + titleparam + " % Share"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">

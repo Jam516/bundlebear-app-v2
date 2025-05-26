@@ -12,14 +12,12 @@ interface SimpleBarChartProps {
     data: DataEntry[];
     xaxis: string;
     yaxis: string;
-    usd?: boolean;
 }
 
 export function MultiopBarChart({
     data,
     xaxis,
-    yaxis,
-    usd = false
+    yaxis
 }: SimpleBarChartProps) {
     // Number shortening function for Y-axis
     const formatShortNumber = (num: number): string => {
