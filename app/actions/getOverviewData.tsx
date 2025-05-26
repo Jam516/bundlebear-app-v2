@@ -14,7 +14,7 @@ interface ChainData {
     monthly_userops: any[],
     monthly_paymaster_spend: any[],
     monthly_bundler_revenue: any[],
-    retention: any[],
+    // retention: any[],
     // userops_by_type: any[],
     accounts_by_category: any[]
 }
