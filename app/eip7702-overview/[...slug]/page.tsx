@@ -11,8 +11,11 @@ import {
 } from "@/components/ui/card";
 import { UnifiedBarChart } from "@/components/unified-bar-chart";
 import { UnifiedAreaChart } from "@/components/unified-area-chart";
+import { UnifiedLineChart } from "@/components/unified-line-chart";
 import { CHAIN_BARS_7702 } from '@/components/bar-config';
 import { CHAIN_AREAS_7702 } from "@/components/area-config";
+import { CHAIN_LINES_7702 } from "@/components/line-config";
+import { TXN_TYPE_BARS_7702 } from "@/components/bar-config";
 import { SimpleBarChart } from "@/components/simple-bar-chart";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block-7702";
@@ -67,6 +70,45 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           } />
       </div>
+      <Separator />
+      <p className="text-sm"><strong>WIP: The active account metrics undercount reality</strong> because they dont include transactions where a third-party wallet calls the code of one or more smart accounts (without using ERC-4337). Im working on adding these &quot;relayed actions&quot; to the BundleBear dataset. Right now, the activity metrics account for:</p>
+      <li className="text-sm"><strong>erc-4337 userops:</strong> Actions performed using ERC-4337 UserOperations</li>
+      <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account triggers its own code</li>
+      <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didnt use its code</li>
+
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>{chainlabel + titleparam + " Active Smart Accounts"}</CardTitle>
+            <CardDescription>Smart accounts that are making UserOps and/or transactions</CardDescription>
+          </CardHeader>
+          <CardContent className="pl-1">
+            {chain != 'all' ? <SimpleBarChart data={data.active_smart_wallets_chart} xaxis={"DATE"} yaxis={"ACTIVE_ACCOUNTS"} /> : <UnifiedLineChart data={data.active_smart_wallets_chart} xaxis={"DATE"} yaxis={"ACTIVE_ACCOUNTS"} segment={"CHAIN"} lineConfig={CHAIN_LINES_7702} />}
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>{chainlabel + titleparam + " Smart Account Actions"}</CardTitle>
+            <CardDescription>UserOps and transactions made by smart accounts</CardDescription>
+          </CardHeader>
+          <CardContent className="pl-1">
+            {chain != 'all' ? <SimpleBarChart data={data.smart_wallet_actions} xaxis={"DATE"} yaxis={"NUM_ACTIONS"} /> : <UnifiedBarChart data={data.smart_wallet_actions} xaxis={"DATE"} yaxis={"NUM_ACTIONS"} segment={"CHAIN"} barConfig={CHAIN_BARS_7702} />}
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid gap-4 grid-cols-1">
+        <Card>
+          <CardHeader>
+            <CardTitle>{chainlabel + titleparam + " Smart Account Actions by Type"}</CardTitle>
+            <CardDescription>UserOps and transactions made by smart accounts</CardDescription>
+          </CardHeader>
+          <CardContent className="pl-1">
+            <UnifiedBarChart data={data.smart_wallet_actions_type} xaxis={"DATE"} yaxis={"NUM_ACTIONS"} segment={"TYPE"} barConfig={TXN_TYPE_BARS_7702} />
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -74,7 +116,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <CardDescription>Wallets that have an active 7702 authorization</CardDescription>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} /> : <UnifiedAreaChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
+            {chain != 'all' ? <SimpleBarChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} /> : <UnifiedLineChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} lineConfig={CHAIN_LINES_7702} />}
           </CardContent>
         </Card>
         <Card>

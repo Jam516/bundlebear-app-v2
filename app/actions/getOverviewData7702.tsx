@@ -10,7 +10,11 @@ interface ChainData {
     authorizations_chart: any[],
     set_code_chart: any[],
     live_smart_wallets_chart: any[],
-    live_authorized_contracts_chart: any[]
+    live_authorized_contracts_chart: any[],
+    active_smart_wallets_chart: any[],
+    smart_wallet_actions: any[],
+    smart_wallet_actions_type: any[],
+
 }
 
 export async function getOverviewData7702({ chain, timeframe }: OverviewDataParams): Promise<ChainData> {

@@ -9,10 +9,10 @@ export const BUNDLER_BARS: BarConfig[] = [
     { dataKey: "alchemy", fill: "#118AB2" },
     { dataKey: "pimlico", fill: "#7115AA" },
     { dataKey: "coinbase", fill: "#0052FF" },
-
     { dataKey: "biconomy", fill: "#FF4E17" },
     { dataKey: "particle", fill: "#F386FF" },
     { dataKey: "stackup", fill: "#1D2F6F" },
+    { dataKey: "thirdweb", fill: "#a50cb3" },
     { dataKey: "Send", fill: "#3efa4e" },
     { dataKey: "cometh", fill: "#5F6D81" },
     { dataKey: "candide", fill: "#F5D491" },
@@ -31,6 +31,7 @@ export const PAYMASTER_BARS: BarConfig[] = [
     { dataKey: "particle", fill: "#F386FF" },
     { dataKey: "circle", fill: "#008000" },
     { dataKey: "blocto", fill: "#B6D6CC" },
+    { dataKey: "thirdweb", fill: "#a50cb3" },
     { dataKey: "candide", fill: "#F5D491" },
     { dataKey: "send", fill: "#2A9D8F" },
     { dataKey: "cometh", fill: "#5F6D81" },
@@ -93,5 +94,10 @@ export const CHAIN_BARS_7702: BarConfig[] = [
     { dataKey: "base", fill: "#90C2E7" },
     { dataKey: "optimism", fill: "#D1345B" },
     { dataKey: "gnosis", fill: "#0d8f75" },
-    // { dataKey: "cross-chain", fill: "#823038" }
+];
+
+export const TXN_TYPE_BARS_7702: BarConfig[] = [
+    { dataKey: "erc-4337 userop", fill: "#777780" },
+    { dataKey: "self-initated txn", fill: "#F0B90B" },
+    { dataKey: "eoa txn", fill: "#90C2E7" }
 ];
