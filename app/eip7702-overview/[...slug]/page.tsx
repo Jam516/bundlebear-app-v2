@@ -70,11 +70,11 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           } />
       </div>
-      <Separator />
+      {/* <Separator />
       <p className="text-sm"><strong>WIP: The active account metrics undercount reality</strong> because they dont include transactions where a third-party wallet calls the code of one or more smart accounts (without using ERC-4337). Im working on adding these &quot;relayed actions&quot; to the BundleBear dataset. Right now, the activity metrics account for:</p>
       <li className="text-sm"><strong>erc-4337 userops:</strong> Actions performed using ERC-4337 UserOperations</li>
       <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account triggers its own code</li>
-      <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didnt use its code</li>
+      <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didnt use its code</li> */}
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
