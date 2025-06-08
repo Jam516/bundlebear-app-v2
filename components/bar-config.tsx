@@ -97,6 +97,7 @@ export const CHAIN_BARS_7702: BarConfig[] = [
 ];
 
 export const TXN_TYPE_BARS_7702: BarConfig[] = [
+    { dataKey: "relayed action", fill: "#0d8f75" },
     { dataKey: "erc-4337 userop", fill: "#777780" },
     { dataKey: "self-initated txn", fill: "#F0B90B" },
     { dataKey: "eoa txn", fill: "#90C2E7" }
