@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default async function OverviewPage7702({ params }: { params: tParams }) {
 
   const parameters = await params;
-  const [chain = 'all', timeframe = 'day'] = Array.isArray(parameters.slug) ? parameters.slug : [];
+  const [chain = 'all', timeframe = 'week'] = Array.isArray(parameters.slug) ? parameters.slug : [];
 
   const data = await getOverviewData7702({ chain, timeframe });
 
@@ -70,11 +70,12 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           } />
       </div>
-      {/* <Separator />
-      <p className="text-sm"><strong>WIP: The active account metrics undercount reality</strong> because they dont include transactions where a third-party wallet calls the code of one or more smart accounts (without using ERC-4337). Im working on adding these &quot;relayed actions&quot; to the BundleBear dataset. Right now, the activity metrics account for:</p>
-      <li className="text-sm"><strong>erc-4337 userops:</strong> Actions performed using ERC-4337 UserOperations</li>
-      <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account triggers its own code</li>
-      <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didnt use its code</li> */}
+      <Separator />
+      <p className="text-sm">The active account metrics track four main types of onchain action:</p>
+      <li className="text-sm"><strong>erc-4337 userops:</strong>Actions done using ERC-4337 UserOperations</li>
+      <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account runs its own code</li>
+      <li className="text-sm"><strong>relayed actions:</strong> Actions initiated by a third-party wallet that calls the smart account&quot;s code (without using 4337)</li>
+      <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didn&quot;t use its code</li>
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
@@ -96,13 +97,6 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
           </CardContent>
         </Card>
       </div>
-
-      <Separator />
-      <p className="text-sm">The active account metrics account for four main types of onchain action:</p>
-      <li className="text-sm"><strong>erc-4337 userops:</strong>Actions performed using ERC-4337 UserOperations</li>
-      <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account triggers its own code</li>
-      <li className="text-sm"><strong>relayed actions:</strong> Actions triggered by a third-party wallet calling the smart account&quot;s code (without using 4337)</li>
-      <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didnt use its code</li>
 
       <div className="grid gap-4 grid-cols-1">
         <Card>
