@@ -97,6 +97,13 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
         </Card>
       </div>
 
+      <Separator />
+      <p className="text-sm">The active account metrics account for four main types of onchain action:</p>
+      <li className="text-sm"><strong>erc-4337 userops:</strong>Actions performed using ERC-4337 UserOperations</li>
+      <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account triggers its own code</li>
+      <li className="text-sm"><strong>relayed actions:</strong> Actions triggered by a third-party wallet calling the smart account&quot;s code (without using 4337)</li>
+      <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didnt use its code</li>
+
       <div className="grid gap-4 grid-cols-1">
         <Card>
           <CardHeader>
