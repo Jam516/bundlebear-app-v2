@@ -71,7 +71,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
           } />
       </div>
       <Separator />
-      <p className="text-sm">The active account metrics track four main types of onchain action:</p>
+      <p className="text-sm">The active account metrics track four types of onchain action:</p>
       <li className="text-sm"><strong>erc-4337 userops:</strong>Actions done using ERC-4337 UserOperations</li>
       <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account runs its own code</li>
       <li className="text-sm"><strong>relayed actions:</strong> Actions initiated by a third-party wallet that calls the smart account&quot;s code (without using 4337)</li>
