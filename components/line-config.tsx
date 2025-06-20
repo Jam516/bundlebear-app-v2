@@ -41,6 +41,7 @@ export const CHAIN_LINES_7702: LineConfig[] = [
     { dataKey: "bsc", stroke: "#F0B90B" },
     { dataKey: "base", stroke: "#90C2E7" },
     { dataKey: "optimism", stroke: "#D1345B" },
+    { dataKey: "arbitrum", stroke: "#3454D1" },
     { dataKey: "gnosis", stroke: "#0d8f75" }
     // { dataKey: "cross-chain", fill: "#823038", stroke: "#823038" }
 ];
