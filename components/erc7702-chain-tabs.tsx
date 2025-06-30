@@ -42,6 +42,7 @@ export function ChainTabs7702() {
                 <TabsTrigger value="base">Base</TabsTrigger>
                 <TabsTrigger value="optimism">Optimism</TabsTrigger>
                 <TabsTrigger value="arbitrum">Arbitrum</TabsTrigger>
+                <TabsTrigger value="arbitrum">Unichain</TabsTrigger>
                 <TabsTrigger value="gnosis">Gnosis</TabsTrigger>
             </TabsList>
         </Tabs>
