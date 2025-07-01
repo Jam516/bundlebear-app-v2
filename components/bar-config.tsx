@@ -54,7 +54,7 @@ export const CHAIN_BARS: BarConfig[] = [
     { dataKey: "worldchain", fill: "#121212" },
     { dataKey: "optimism", fill: "#D1345B" },
     { dataKey: "arbitrum_nova", fill: "#FF7700" },
-    { dataKey: "celo", fill: "#FCFF52" },
+    { dataKey: "celo", fill: "#ced132" },
     { dataKey: "avalanche", fill: "#823038" },
     { dataKey: "bsc", fill: "#F0B90B" },
     { dataKey: "linea", fill: "#fff069" },
