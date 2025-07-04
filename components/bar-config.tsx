@@ -95,6 +95,7 @@ export const CHAIN_BARS_7702: BarConfig[] = [
     { dataKey: "optimism", fill: "#D1345B" },
     { dataKey: "arbitrum", fill: "#3454D1" },
     { dataKey: "unichain", fill: "#ff38c7" },
+    { dataKey: "polygon", fill: "#A982ED" },
     { dataKey: "gnosis", fill: "#0d8f75" },
 ];
 
