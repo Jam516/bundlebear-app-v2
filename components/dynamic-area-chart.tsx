@@ -60,6 +60,8 @@ export function DynamicAreaChart({
         "Burn Address": '#171717',
         "OKX 7702Wallet": '#1DB227',
         "Ambire 7702Account": '#A36EFD',
+        "CrimeEnjoyor": '#ababab',
+        "CrimeEnjoyor2": '#ababab',
     },
     dateFormat = 'DD-MMM-YY',
     height = 400,
