@@ -54,7 +54,7 @@ const stringToColor = (str: string): string => {
 export function DynamicAreaChart({
     data,
     colorMap = {
-        "Metamask 7702Delegator": '#ff5d17',
+        "Metamask Delegator": '#ff5d17',
         "Simple 7702Account": '#FAC748',
         Other: '#525252',
         "Burn Address": '#171717',
