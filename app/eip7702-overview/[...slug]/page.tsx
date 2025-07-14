@@ -17,6 +17,8 @@ import { CHAIN_AREAS_7702 } from "@/components/area-config";
 import { CHAIN_LINES_7702 } from "@/components/line-config";
 import { TXN_TYPE_BARS_7702 } from "@/components/bar-config";
 import { SimpleBarChart } from "@/components/simple-bar-chart";
+import { SimpleLineChart } from "@/components/simple-line-chart";
+import { SimpleAreaChart } from "@/components/simple-area-chart";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block-7702";
 import { SiteFooter } from "@/components/footer";
@@ -84,7 +86,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <CardDescription>Smart accounts that are making UserOps and/or transactions</CardDescription>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.active_smart_wallets_chart} xaxis={"DATE"} yaxis={"ACTIVE_ACCOUNTS"} /> : <UnifiedLineChart data={data.active_smart_wallets_chart} xaxis={"DATE"} yaxis={"ACTIVE_ACCOUNTS"} segment={"CHAIN"} lineConfig={CHAIN_LINES_7702} />}
+            {chain != 'all' ? <SimpleLineChart data={data.active_smart_wallets_chart} xaxis={"DATE"} yaxis={"ACTIVE_ACCOUNTS"} /> : <UnifiedLineChart data={data.active_smart_wallets_chart} xaxis={"DATE"} yaxis={"ACTIVE_ACCOUNTS"} segment={"CHAIN"} lineConfig={CHAIN_LINES_7702} />}
           </CardContent>
         </Card>
         <Card>
@@ -117,7 +119,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <CardDescription>Wallets that have an active 7702 authorization</CardDescription>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} /> : <UnifiedLineChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} lineConfig={CHAIN_LINES_7702} />}
+            {chain != 'all' ? <SimpleLineChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} /> : <UnifiedLineChart data={data.live_smart_wallets_chart} xaxis={"DATE"} yaxis={"LIVE_SMART_WALLETS"} segment={"CHAIN"} lineConfig={CHAIN_LINES_7702} />}
           </CardContent>
         </Card>
         <Card>
@@ -126,7 +128,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
             <CardDescription>Contracts that are authorized by at least one wallet</CardDescription>
           </CardHeader>
           <CardContent className="pl-1">
-            {chain != 'all' ? <SimpleBarChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} /> : <UnifiedAreaChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
+            {chain != 'all' ? <SimpleAreaChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} /> : <UnifiedAreaChart data={data.live_authorized_contracts_chart} xaxis={"DATE"} yaxis={"LIVE_AUTHORIZED_CONTRACTS"} segment={"CHAIN"} areaConfig={CHAIN_AREAS_7702} />}
           </CardContent>
         </Card>
       </div>

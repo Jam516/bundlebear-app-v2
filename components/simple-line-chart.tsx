@@ -1,6 +1,6 @@
 "use client";
 
-import { Bar, BarChart, Tooltip, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from "recharts";
+import { Line, LineChart, Tooltip, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from "recharts";
 import moment from 'moment';
 
 // Simple data type without segments
@@ -8,19 +8,19 @@ type DataEntry = {
     [key: string]: string | number;
 };
 
-interface SimpleBarChartProps {
+interface SimpleLineChartProps {
     data: DataEntry[];
     xaxis: string;
     yaxis: string;
     usd?: boolean;
 }
 
-export function SimpleBarChart({
+export function SimpleLineChart({
     data,
     xaxis,
     yaxis,
     usd = false
-}: SimpleBarChartProps) {
+}: SimpleLineChartProps) {
     // Number shortening function for Y-axis
     const formatShortNumber = (num: number): string => {
         if (num === 0) return '0';
@@ -61,10 +61,10 @@ export function SimpleBarChart({
         if (!active || !payload || !payload.length) return null;
 
         return (
-            <div className="custom-tooltip" style={{ backgroundColor: 'white', padding: '10px', border: '1px solid #ccc' }}>
-                <p className="label">{`${xaxis}: ${label}`}</p>
+            <div className="custom-tooltip" style={{ backgroundColor: 'white', padding: '10px', border: '1px solid #ccc', borderRadius: '4px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                <p className="label" style={{ margin: '0 0 5px 0', fontWeight: 'bold' }}>{`${xaxis}: ${label}`}</p>
                 {payload.map((entry: TooltipPayloadItem, index: number) => (
-                    <p key={`item-${index}`} style={{ color: entry.color }}>
+                    <p key={`item-${index}`} style={{ color: entry.color, margin: '0' }}>
                         {`${entry.name}: ${usd
                             ? entry.value < 0
                                 ? `-$${Math.abs(entry.value).toLocaleString()}`
@@ -78,9 +78,8 @@ export function SimpleBarChart({
 
     return (
         <ResponsiveContainer width="100%" height={350}>
-            <BarChart
+            <LineChart
                 data={data}
-                barCategoryGap={0}
             >
                 <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
                 <XAxis
@@ -111,9 +110,16 @@ export function SimpleBarChart({
                     }}
                 />
                 <Tooltip content={<CustomTooltip />} />
-                {/* <Legend /> */}
-                <Bar dataKey={yaxis} name={yaxis} fill="#90C2E7" />
-            </BarChart>
+                <Line
+                    type="monotone"
+                    dataKey={yaxis}
+                    name={yaxis}
+                    stroke="#90C2E7"
+                    strokeWidth={2}
+                    dot={{ fill: '#90C2E7', r: 4 }}
+                    activeDot={{ r: 6 }}
+                />
+            </LineChart>
         </ResponsiveContainer>
     );
 }

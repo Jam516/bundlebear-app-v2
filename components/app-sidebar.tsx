@@ -73,10 +73,10 @@ const data = {
                     title: "Authorized Contracts",
                     url: "/eip7702-authorized-contracts/all",
                 },
-                // {
-                //     title: "Apps",
-                //     url: "#",
-                // },
+                {
+                    title: "Apps",
+                    url: "/eip7702-apps/all",
+                },
             ],
         },
     ],
