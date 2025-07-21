@@ -39,7 +39,7 @@ export default async function AppPage({ params }: { params: tParams }) {
                 <h2 className="text-3xl font-bold tracking-tight">EIP-7702 App Usage</h2>
             </div>
             <TimeSelect />
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " Active Accounts (Excluding Hacked Wallets)"}</CardTitle>
@@ -48,6 +48,8 @@ export default async function AppPage({ params }: { params: tParams }) {
                         <DynamicBarChart data={data.noncrime_usage_chart} />
                     </CardContent>
                 </Card>
+            </div>
+            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " Account Market Share (Excluding Hacked Wallets)"}</CardTitle>
@@ -57,7 +59,7 @@ export default async function AppPage({ params }: { params: tParams }) {
                     </CardContent>
                 </Card>
             </div>
-            <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
+            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " Active Accounts"}</CardTitle>
@@ -66,6 +68,8 @@ export default async function AppPage({ params }: { params: tParams }) {
                         <DynamicBarChart data={data.usage_chart} />
                     </CardContent>
                 </Card>
+            </div>
+            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " Account Market Share"}</CardTitle>
