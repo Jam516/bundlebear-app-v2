@@ -13,6 +13,7 @@ export const BUNDLER_BARS: BarConfig[] = [
     { dataKey: "particle", fill: "#F386FF" },
     { dataKey: "stackup", fill: "#1D2F6F" },
     { dataKey: "thirdweb", fill: "#a50cb3" },
+    { dataKey: "gelato", fill: "#ff3b58" },
     { dataKey: "Send", fill: "#3efa4e" },
     { dataKey: "cometh", fill: "#5F6D81" },
     { dataKey: "candide", fill: "#F5D491" },

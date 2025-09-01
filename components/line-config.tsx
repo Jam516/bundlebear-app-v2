@@ -11,6 +11,7 @@ export const BUNDLER_LINES: LineConfig[] = [
     { dataKey: "etherspot", stroke: "#FAC748" },
     { dataKey: "stackup", stroke: "#1D2F6F" },
     { dataKey: "thirdweb", stroke: "#a50cb3" },
+    { dataKey: "gelato", stroke: "#ff3b58" },
     { dataKey: "unipass", stroke: "#B6D6CC" },
     { dataKey: "candide", stroke: "#F5D491" },
     { dataKey: "biconomy", stroke: "#FF4E17" },
