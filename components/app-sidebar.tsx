@@ -49,10 +49,10 @@ const data = {
                     title: "Paymasters",
                     url: "/erc4337-paymasters/all",
                 },
-                {
-                    title: "Account Factories",
-                    url: "/erc4337-factories/all",
-                },
+                // {
+                //     title: "Account Factories",
+                //     url: "/erc4337-factories/all",
+                // },
                 {
                     title: "Apps",
                     url: "/erc4337-apps/all",
