@@ -10,7 +10,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block-7702";
 import { SiteFooter } from "@/components/footer";
-import { DynamicBarChart } from "@/components/dynamic-bar-chart";
+import { DynamicBarChart } from "@/components/dynamic-bar-chart-providers";
 
 type tParams = Promise<{ slug: string[] }>;
 
