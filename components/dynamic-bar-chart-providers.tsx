@@ -225,7 +225,7 @@ export function DynamicBarChart({
                     }
                 />
                 <Tooltip content={<CustomTooltip />} />
-
+                <Legend />
                 {/* Dynamically render bars for each unique project */}
                 {uniqueProjects.map((project) => (
                     <Bar
