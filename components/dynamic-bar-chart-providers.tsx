@@ -8,7 +8,7 @@ import {
     YAxis,
     CartesianGrid,
     Tooltip,
-    Legend,
+    // Legend,
     ResponsiveContainer
 } from 'recharts';
 import moment from 'moment';
@@ -225,7 +225,7 @@ export function DynamicBarChart({
                     }
                 />
                 <Tooltip content={<CustomTooltip />} />
-                <Legend />
+                {/* <Legend /> */}
                 {/* Dynamically render bars for each unique project */}
                 {uniqueProjects.map((project) => (
                     <Bar
