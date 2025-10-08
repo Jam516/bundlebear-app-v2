@@ -57,6 +57,7 @@ export function DynamicBarChart({
         "factory - zerodev_kernel": "#118AB2",
         "factory - simpleaccount": "#69995D",
         "factory - biconomy": "#FF4E17",
+        "factory - wifi_map": "#9aaff5",
         "factory - lumx": "#6E05FF",
         "factory - coinbase_smart_wallet": "#000000",
         "factory - thirdweb_managedaccount": "#D110A9",
