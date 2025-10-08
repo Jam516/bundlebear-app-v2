@@ -39,11 +39,10 @@ export default async function ActivationPage({ params }: { params: tParams }) {
                 <h2 className="text-3xl font-bold tracking-tight">ERC-4337 Account Activation</h2>
             </div>
             <Separator />
-            <p className="text-sm">This page tracks account activations .ie the first time each accounts makes a UserOp. These new accounts are created in four main ways:</p>
-            <li className="text-sm"><strong>ERC-4337 factory:</strong> Account deployed by factory contract that follows ERC-4337 standard.</li>
+            <p className="text-sm">This page tracks account activations .ie the first time each account makes a UserOp. These new accounts are created in three main ways:</p>
+            <li className="text-sm"><strong>Factory:</strong> Account deployed by factory contract.</li>
             <li className="text-sm"><strong>Safe4337Module:</strong> Safe accounts make UserOps using the 4337 plugin.</li>
             <li className="text-sm"><strong>EIP-7702:</strong> EOAs upgraded into ERC-4337 accounts using an EIP-7702 authorization.</li>
-            <li className="text-sm"><strong>Other factory:</strong> Account deployed by factory contract that does not follow ERC-4337 standard.</li>
             <Separator />
             <TimeSelect />
             <div className="grid gap-4 grid-cols-1">
