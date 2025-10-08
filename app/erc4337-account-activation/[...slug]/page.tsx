@@ -7,6 +7,9 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import { SimpleBarChart } from "@/components/simple-bar-chart";
+import { CHAIN_BARS } from '@/components/bar-config';
+import { UnifiedBarChart } from "@/components/unified-bar-chart";
 import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block-7702";
 import { SiteFooter } from "@/components/footer";
@@ -45,7 +48,7 @@ export default async function ActivationPage({ params }: { params: tParams }) {
             <li className="text-sm"><strong>EIP-7702:</strong> EOAs upgraded into ERC-4337 accounts using an EIP-7702 authorization.</li>
             <Separator />
             <TimeSelect />
-            <div className="grid gap-4 grid-cols-1">
+            <div className="grid gap-4 grid-cols-2">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " New Accounts by Provider"}</CardTitle>
@@ -54,14 +57,22 @@ export default async function ActivationPage({ params }: { params: tParams }) {
                         <DynamicBarChart data={data.new_users_provider_chart} />
                     </CardContent>
                 </Card>
-            </div>
-            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " New Accounts Market Share by Provider"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
                         <DynamicBarChart data={data.new_users_provider_chart} isPercentage={true} />
+                    </CardContent>
+                </Card>
+            </div>
+            <div className="grid gap-4 grid-cols-2">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{chainlabel + titleparam + " New Accounts"}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pl-1">
+                        {chain != 'all' ? <SimpleBarChart data={data.new_users_chain_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} /> : <UnifiedBarChart data={data.new_users_chain_chart} xaxis={"DATE"} yaxis={"NUM_ACCOUNTS"} segment={"CHAIN"} barConfig={CHAIN_BARS} />}
                     </CardContent>
                 </Card>
             </div>
