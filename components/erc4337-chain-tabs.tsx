@@ -27,7 +27,7 @@ export function ChainTabs4337() {
 
     const segments = pathname.split("/");
 
-    const visibleRoutes = ['erc4337-apps', 'erc4337-bundlers', 'erc4337-paymasters', 'erc4337-factories', 'erc4337-overview'];
+    const visibleRoutes = ['erc4337-apps', 'erc4337-bundlers', 'erc4337-paymasters', 'erc4337-factories', 'erc4337-overview', 'erc4337-account-activation'];
 
     if (!visibleRoutes.includes(segments[1])) {
         return null; // Return null instead of empty div for cleaner rendering
