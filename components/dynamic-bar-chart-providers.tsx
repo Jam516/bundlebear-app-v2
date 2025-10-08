@@ -58,7 +58,7 @@ export function DynamicBarChart({
         "erc4337 factory - simpleaccount": "#69995D",
         "erc4337 factory - biconomy": "#FF4E17",
         "erc4337 factory - lumx": "#6E05FF",
-        "erc4337 factory - coinbase_smart_wallet": "#C4DD45",
+        "erc4337 factory - coinbase_smart_wallet": "#000000",
         "erc4337 factory - thirdweb_managedaccount": "#D110A9",
         "erc4337 factory - thirdweb_default": "#D110A9",
         "erc4337 factory - circle": "#008000",
@@ -69,7 +69,7 @@ export function DynamicBarChart({
         "erc4337 factory - ambire": "#A36EFD",
         "erc4337 factory - banana": "#F8E9E9",
         "erc4337 factory - fun.xyz": "#3D3D3D",
-        "other factory": "#707070"
+        "Other": "#707070"
     },
     dateFormat = 'DD-MMM-YY',
     height = 400,
