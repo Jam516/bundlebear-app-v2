@@ -4,7 +4,7 @@ interface ActivationDataParams {
 }
 
 interface ActivationData {
-    new_users_chart: any[]
+    new_users_provider_chart: any[]
 }
 
 export async function getActivationData({ chain, timeframe }: ActivationDataParams): Promise<ActivationData> {

@@ -51,7 +51,7 @@ export default async function ActivationPage({ params }: { params: tParams }) {
                         <CardTitle>{chainlabel + titleparam + " New Accounts by Provider"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
-                        <DynamicBarChart data={data.new_users_chart} />
+                        <DynamicBarChart data={data.new_users_provider_chart} />
                     </CardContent>
                 </Card>
             </div>
@@ -61,7 +61,7 @@ export default async function ActivationPage({ params }: { params: tParams }) {
                         <CardTitle>{chainlabel + titleparam + " New Accounts Market Share by Provider"}</CardTitle>
                     </CardHeader>
                     <CardContent className="pl-1">
-                        <DynamicBarChart data={data.new_users_chart} isPercentage={true} />
+                        <DynamicBarChart data={data.new_users_provider_chart} isPercentage={true} />
                     </CardContent>
                 </Card>
             </div>
