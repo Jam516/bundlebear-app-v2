@@ -48,7 +48,7 @@ export default async function ActivationPage({ params }: { params: tParams }) {
             <li className="text-sm"><strong>EIP-7702:</strong> EOAs upgraded into ERC-4337 accounts using an EIP-7702 authorization.</li>
             <Separator />
             <TimeSelect />
-            <div className="grid gap-4 grid-cols-2">
+            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " New Accounts by Provider"}</CardTitle>
@@ -57,6 +57,8 @@ export default async function ActivationPage({ params }: { params: tParams }) {
                         <DynamicBarChart data={data.new_users_provider_chart} />
                     </CardContent>
                 </Card>
+            </div>
+            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " New Accounts Market Share by Provider"}</CardTitle>
@@ -66,7 +68,7 @@ export default async function ActivationPage({ params }: { params: tParams }) {
                     </CardContent>
                 </Card>
             </div>
-            <div className="grid gap-4 grid-cols-2">
+            <div className="grid gap-4 grid-cols-1">
                 <Card>
                     <CardHeader>
                         <CardTitle>{chainlabel + titleparam + " New Accounts"}</CardTitle>
