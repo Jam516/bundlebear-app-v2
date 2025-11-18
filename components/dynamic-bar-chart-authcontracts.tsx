@@ -23,7 +23,7 @@ type TransformedEntry = {
     [key: string]: string | number;
 };
 
-interface DynamicBarChartProps {
+interface DynamicBarChartAuthProps {
     data: DataEntry[];
     // Optional color map for known projects
     colorMap?: Record<string, string>;
@@ -49,34 +49,23 @@ const stringToColor = (str: string): string => {
     return color;
 };
 
-export function DynamicBarChart({
+export function DynamicBarChartAuth({
     data,
     colorMap = {
-        "Safe4337Module": "#15514A",
-        "factory - alchemy": "#1167b1",
-        "factory - zerodev_kernel": "#118AB2",
-        "factory - simpleaccount": "#69995D",
-        "factory - biconomy": "#FF4E17",
-        "factory - wifi_map": "#9aaff5",
-        "factory - lumx": "#6E05FF",
-        "factory - coinbase_smart_wallet": "#000000",
-        "factory - thirdweb_managedaccount": "#D110A9",
-        "factory - thirdweb_default": "#D110A9",
-        "factory - circle": "#008000",
-        "factory - kresus_vault": "#B6D6CC",
-        "factory - nani": "#FFC6FF",
-        "factory - etherspot": "#FAC748",
-        "factory - candide": "#F5D491",
-        "factory - metamask": "#ff5d17",
-        "factory - ambire": "#A36EFD",
-        "factory - banana": "#F8E9E9",
-        "factory - fun.xyz": "#3D3D3D",
-        "Other": "#707070"
+        "Metamask Delegator": '#ff5d17',
+        "Simple 7702Account": '#FAC748',
+        other: '#525252',
+        "Burn Address": '#171717',
+        "OKX 7702Wallet": '#1DB227',
+        "Ambire 7702Account": '#6c39f7',
+        "CrimeEnjoyor": '#661800',
+        "CrimeEnjoyor2": '#661800',
+        "Uniswap": '#ff38c7',
     },
     dateFormat = 'DD-MMM-YY',
     height = 400,
     isPercentage = false
-}: DynamicBarChartProps) {
+}: DynamicBarChartAuthProps) {
     // Transform data for Recharts
     const { transformedData, uniqueProjects } = useMemo(() => {
         // Group by date
