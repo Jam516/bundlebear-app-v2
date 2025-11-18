@@ -15,7 +15,7 @@ import moment from 'moment';
 
 type DataEntry = {
     DATE: string;
-    NUM_ACCOUNTS: number;
+    NUM_USEROPS: number;
     AUTHORIZED_CONTRACT: string;
 };
 type TransformedEntry = {
@@ -23,7 +23,7 @@ type TransformedEntry = {
     [key: string]: string | number;
 };
 
-interface DynamicBarChartAuthProps {
+interface DynamicBarChartAuthOpsProps {
     data: DataEntry[];
     // Optional color map for known projects
     colorMap?: Record<string, string>;
@@ -49,7 +49,7 @@ const stringToColor = (str: string): string => {
     return color;
 };
 
-export function DynamicBarChartAuth({
+export function DynamicBarChartAuthOps({
     data,
     colorMap = {
         "Metamask Delegator": '#ff5d17',
@@ -66,7 +66,7 @@ export function DynamicBarChartAuth({
     dateFormat = 'DD-MMM-YY',
     height = 400,
     isPercentage = false
-}: DynamicBarChartAuthProps) {
+}: DynamicBarChartAuthOpsProps) {
     // Transform data for Recharts
     const { transformedData, uniqueProjects } = useMemo(() => {
         // Group by date
@@ -86,7 +86,7 @@ export function DynamicBarChartAuth({
 
             // Add value to the correct project for this date
             dateGroups[formattedDate][entry.AUTHORIZED_CONTRACT] =
-                (dateGroups[formattedDate][entry.AUTHORIZED_CONTRACT] as number || 0) + entry.NUM_ACCOUNTS;
+                (dateGroups[formattedDate][entry.AUTHORIZED_CONTRACT] as number || 0) + entry.NUM_USEROPS;
         });
 
         // Convert to array for Recharts

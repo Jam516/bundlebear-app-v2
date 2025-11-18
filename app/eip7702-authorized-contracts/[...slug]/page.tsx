@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { AboutBlock } from "@/components/about-block-7702";
 import { SiteFooter } from "@/components/footer";
 import { DynamicAreaChart } from "@/components/dynamic-area-chart";
-import { SimpleBarChart } from "@/components/simple-bar-chart";
+// import { SimpleBarChart } from "@/components/simple-bar-chart";
 // import { FACTORY_BARS } from '@/components/bar-config';
 import { authcontractcolumns } from "@/components/columns";
 import { DataTable } from "@/components/data-table";
