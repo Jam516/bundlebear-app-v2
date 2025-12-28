@@ -79,7 +79,7 @@ export default function PolygonMevPage() {
                 </p>
 
                 <img 
-                    src="https://oepmwadzuywhrisyygvh.supabase.co/storage/v1/object/public/Blog%20images/Screenshot%202024-09-22%20190113.png" 
+                    src="/blog/monthly-polygon-bundles.png" 
                     alt="Monthly bundles by MEV bots" 
                     className="w-full rounded-lg" 
                 />
@@ -91,7 +91,7 @@ export default function PolygonMevPage() {
                 </p>
 
                 <img 
-                    src="https://oepmwadzuywhrisyygvh.supabase.co/storage/v1/object/public/Blog%20images/Screenshot%202024-09-22%20190018.png?t=2024-09-23T07%3A31%3A36.229Z" 
+                    src="/blog/monthly-mev-bot-rev.png" 
                     alt="MEV bot revenue" 
                     className="w-full rounded-lg" 
                 />
@@ -119,7 +119,7 @@ export default function PolygonMevPage() {
                 </p>
 
                 <img 
-                    src="https://oepmwadzuywhrisyygvh.supabase.co/storage/v1/object/public/Blog%20images/Screenshot%202024-09-22%20192123.png" 
+                    src="/blog/monthly-failed.png"
                     alt="Failed bundles by bundler" 
                     className="w-full rounded-lg" 
                 />
