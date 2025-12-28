@@ -12,6 +12,7 @@ import {
     LayoutDashboard,
     List,
     SquareActivity,
+    Blend,
     // Settings2,
     // SquareTerminal,
 } from "lucide-react"
@@ -76,6 +77,18 @@ const data = {
                 {
                     title: "Apps",
                     url: "/eip7702-apps/all",
+                },
+            ],
+        },
+        {
+            title: "7702 X 4337",
+            url: "/eip7702-x-erc4337/all",
+            icon: Blend,
+            isActive: true,
+            items: [
+                {
+                    title: "Overview",
+                    url: "/eip7702-x-erc4337/all",
                 },
             ],
         },

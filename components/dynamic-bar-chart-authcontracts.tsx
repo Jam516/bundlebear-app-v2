@@ -54,6 +54,8 @@ export function DynamicBarChartAuth({
     colorMap = {
         "Metamask Delegator": '#ff5d17',
         "Coinbase Wallet": '#0052FF',
+        "Zerodev": '#118AB2',
+        "Alchemy": '#1167b1',
         "Simple 7702Account": '#FAC748',
         other: '#525252',
         "Burn Address": '#171717',
