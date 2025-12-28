@@ -39,9 +39,9 @@ export default async function OverlapPage({ params }: { params: tParams }) {
             <div className="flex items-center justify-between">
                 <h2 className="text-3xl font-bold tracking-tight">EIP-7702 X ERC-4337</h2>
             </div>
-            <Separator />
-            <p className="text-sm">This page tracks the ERC-4337 activity of EIP-7702 Accounts</p>
-            <Separator />
+    
+            <p className="text-muted-foreground text-m">This page tracks the ERC-4337 activity of EIP-7702 Accounts</p>
+            {/* <Separator /> */}
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>
