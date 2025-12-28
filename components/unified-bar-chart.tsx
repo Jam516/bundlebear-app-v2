@@ -5,7 +5,6 @@ import moment from 'moment';
 
 type DataEntry = {
     DATE: string;
-    CHAIN: string;
     [key: string]: string | number;
 };
 
