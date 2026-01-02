@@ -40,6 +40,12 @@ const blogPosts: Post[] = [
 
 const yearInReviewPosts: Post[] = [
     {
+        title: "EIP-7702 2025 Year in Review",
+        date: "December 28, 2025",
+        description: "Annual review of EIP-7702 smart account adoption, authorized contracts, and the 7702 x 4337 overlap.",
+        href: "/research/year-in-review/eip7702-2025",
+    },
+    {
         title: "2024 Year in Review",
         date: "December 26, 2024",
         description: "Annual review of the patterns and trends that shaped the ERC-4337 ecosystem in 2024.",
