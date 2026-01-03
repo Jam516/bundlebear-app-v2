@@ -105,7 +105,7 @@ export default function EIP7702YIR2025Page() {
                         </CardContent>
                     </Card>
 
-                    <h3 className="text-xl font-bold tracking-tight pt-6">Top Authorized Contracts (All)</h3>
+                    <h3 className="text-xl font-bold tracking-tight pt-6">Top Authorized Contracts</h3>
                     <p>Here are the top authorized contracts ranked by live smart accounts:</p>
                     <DataTable columns={authcontractcolumns} data={top_auth_contracts_all} entity={false} />
 
@@ -149,9 +149,9 @@ export default function EIP7702YIR2025Page() {
                     </p>
                     <p>
                         BSC&apos;s dominance was driven primarily by{" "}
-                        <a href="https://metamask.io/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Metamask Delegator</a> (88M total actions),{" "}
-                        <a href="https://www.tokenpocket.pro/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">TokenPocket</a> (31M actions), and{" "}
-                        <a href="https://www.bitget.com/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Bitget</a> (26M actions).
+                        <a href="https://metamask.io/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Metamask Delegator</a> (30M total actions),{" "}
+                        <a href="https://www.tokenpocket.pro/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">TokenPocket</a> (11M actions), and{" "}
+                        <a href="https://www.bitget.com/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Bitget</a> (9M actions).
                     </p>
                     <Card className="border-2">
                         <CardHeader>
@@ -175,12 +175,12 @@ export default function EIP7702YIR2025Page() {
                         and ERC-4337 UserOperations.
                     </p>
                     <p>
-                        In 2025, regular EOA transactions dominated, followed by relayed actions and self-initiated 
-                        transactions. ERC-4337 UserOps were a small but growing portion of the activity.
+                        Among non-hacker accounts in 2025, regular EOA transactions dominated, followed by relayed actions 
+                        and self-initiated transactions. ERC-4337 UserOps were a small but growing portion of the activity.
                     </p>
                     <Card className="border-2">
                         <CardHeader>
-                            <CardTitle className="mx-auto">Smart Account Actions by Type</CardTitle>
+                            <CardTitle className="mx-auto">Non-Hacker Smart Account Actions by Type</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <UnifiedBarChart 
@@ -189,6 +189,7 @@ export default function EIP7702YIR2025Page() {
                                 yaxis="NUM_ACTIONS" 
                                 segment="TYPE"
                                 barConfig={actionTypeBarConfig}
+                                isPercentage = {true}
                             />
                         </CardContent>
                     </Card>
@@ -377,38 +378,34 @@ const noncrime_by_chain = [
 ];
 
 const actions_by_type = [
-    { DATE: "2025-05-01", TYPE: "eoa txn", NUM_ACTIONS: 848030 },
-    { DATE: "2025-05-01", TYPE: "self-initated txn", NUM_ACTIONS: 257163 },
-    { DATE: "2025-05-01", TYPE: "relayed action", NUM_ACTIONS: 84156 },
-    { DATE: "2025-05-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 809 },
-    { DATE: "2025-06-01", TYPE: "eoa txn", NUM_ACTIONS: 2452558 },
-    { DATE: "2025-06-01", TYPE: "relayed action", NUM_ACTIONS: 719632 },
-    { DATE: "2025-06-01", TYPE: "self-initated txn", NUM_ACTIONS: 717531 },
-    { DATE: "2025-06-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 7660 },
-    { DATE: "2025-07-01", TYPE: "eoa txn", NUM_ACTIONS: 15745713 },
-    { DATE: "2025-07-01", TYPE: "relayed action", NUM_ACTIONS: 7925583 },
-    { DATE: "2025-07-01", TYPE: "self-initated txn", NUM_ACTIONS: 5700734 },
-    { DATE: "2025-07-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 5731 },
-    { DATE: "2025-08-01", TYPE: "eoa txn", NUM_ACTIONS: 28306314 },
-    { DATE: "2025-08-01", TYPE: "relayed action", NUM_ACTIONS: 20043901 },
-    { DATE: "2025-08-01", TYPE: "self-initated txn", NUM_ACTIONS: 7957523 },
-    { DATE: "2025-08-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 7288 },
-    { DATE: "2025-09-01", TYPE: "relayed action", NUM_ACTIONS: 46764284 },
-    { DATE: "2025-09-01", TYPE: "eoa txn", NUM_ACTIONS: 41055318 },
-    { DATE: "2025-09-01", TYPE: "self-initated txn", NUM_ACTIONS: 13310067 },
+    { DATE: "2025-06-01", TYPE: "eoa txn", NUM_ACTIONS: 2415949 },
+    { DATE: "2025-06-01", TYPE: "relayed action", NUM_ACTIONS: 466645 },
+    { DATE: "2025-06-01", TYPE: "self-initated txn", NUM_ACTIONS: 713707 },
+    { DATE: "2025-06-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 7943 },
+    { DATE: "2025-07-01", TYPE: "eoa txn", NUM_ACTIONS: 6143753 },
+    { DATE: "2025-07-01", TYPE: "relayed action", NUM_ACTIONS: 3967008 },
+    { DATE: "2025-07-01", TYPE: "self-initated txn", NUM_ACTIONS: 2160222 },
+    { DATE: "2025-07-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 6357 },
+    { DATE: "2025-08-01", TYPE: "eoa txn", NUM_ACTIONS: 8842730 },
+    { DATE: "2025-08-01", TYPE: "relayed action", NUM_ACTIONS: 8753705 },
+    { DATE: "2025-08-01", TYPE: "self-initated txn", NUM_ACTIONS: 2520558 },
+    { DATE: "2025-08-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 7289 },
+    { DATE: "2025-09-01", TYPE: "eoa txn", NUM_ACTIONS: 13170273 },
+    { DATE: "2025-09-01", TYPE: "relayed action", NUM_ACTIONS: 16023168 },
+    { DATE: "2025-09-01", TYPE: "self-initated txn", NUM_ACTIONS: 4263351 },
     { DATE: "2025-09-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 15741 },
-    { DATE: "2025-10-01", TYPE: "relayed action", NUM_ACTIONS: 86401455 },
-    { DATE: "2025-10-01", TYPE: "eoa txn", NUM_ACTIONS: 67180990 },
-    { DATE: "2025-10-01", TYPE: "self-initated txn", NUM_ACTIONS: 19219815 },
-    { DATE: "2025-10-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 49153 },
-    { DATE: "2025-11-01", TYPE: "eoa txn", NUM_ACTIONS: 59313156 },
-    { DATE: "2025-11-01", TYPE: "relayed action", NUM_ACTIONS: 48134350 },
-    { DATE: "2025-11-01", TYPE: "self-initated txn", NUM_ACTIONS: 13440544 },
-    { DATE: "2025-11-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 360757 },
-    { DATE: "2025-12-01", TYPE: "eoa txn", NUM_ACTIONS: 52722280 },
-    { DATE: "2025-12-01", TYPE: "relayed action", NUM_ACTIONS: 43775053 },
-    { DATE: "2025-12-01", TYPE: "self-initated txn", NUM_ACTIONS: 12306831 },
-    { DATE: "2025-12-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 926184 },
+    { DATE: "2025-10-01", TYPE: "eoa txn", NUM_ACTIONS: 23356206 },
+    { DATE: "2025-10-01", TYPE: "relayed action", NUM_ACTIONS: 30150332 },
+    { DATE: "2025-10-01", TYPE: "self-initated txn", NUM_ACTIONS: 6631391 },
+    { DATE: "2025-10-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 49150 },
+    { DATE: "2025-11-01", TYPE: "eoa txn", NUM_ACTIONS: 19760739 },
+    { DATE: "2025-11-01", TYPE: "relayed action", NUM_ACTIONS: 18657386 },
+    { DATE: "2025-11-01", TYPE: "self-initated txn", NUM_ACTIONS: 4482364 },
+    { DATE: "2025-11-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 360750 },
+    { DATE: "2025-12-01", TYPE: "eoa txn", NUM_ACTIONS: 18541263 },
+    { DATE: "2025-12-01", TYPE: "relayed action", NUM_ACTIONS: 15987913 },
+    { DATE: "2025-12-01", TYPE: "self-initated txn", NUM_ACTIONS: 4327297 },
+    { DATE: "2025-12-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 926143 },
 ];
 
 const monthly_7702_userops = [
