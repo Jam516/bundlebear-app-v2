@@ -293,3 +293,45 @@ export const authcontractcolumns: ColumnDef<AuthContracts>[] = [
         },
     },
 ]
+
+export type Overlap4337Contract = {
+    AUTHORIZED_CONTRACT: string
+    NUM_WALLETS: number
+}
+
+export const overlap4337columns: ColumnDef<Overlap4337Contract>[] = [
+    {
+        accessorKey: "AUTHORIZED_CONTRACT",
+        header: "Authorized Contract",
+    },
+    {
+        accessorKey: "NUM_WALLETS",
+        header: "EIP-7702 Accounts that made UserOps",
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("NUM_WALLETS"))
+
+            return <div>{amount.toLocaleString()}</div>
+        },
+    },
+]
+
+export type TransactingContract = {
+    AUTHORIZED_CONTRACT: string
+    NUM_WALLETS: number
+}
+
+export const transactingcontractcolumns: ColumnDef<TransactingContract>[] = [
+    {
+        accessorKey: "AUTHORIZED_CONTRACT",
+        header: "Authorized Contract",
+    },
+    {
+        accessorKey: "NUM_WALLETS",
+        header: "Active Wallets (5+ actions)",
+        cell: ({ row }) => {
+            const amount = parseFloat(row.getValue("NUM_WALLETS"))
+
+            return <div>{amount.toLocaleString()}</div>
+        },
+    },
+]

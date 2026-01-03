@@ -17,7 +17,7 @@ import { SimpleLineChart } from "@/components/simple-line-chart";
 import { UnifiedBarChart } from "@/components/unified-bar-chart";
 import { SimplePieChart } from "@/components/simple-pie-chart";
 import { DataTable } from "@/components/data-table";
-import { authcontractcolumns } from "@/components/columns";
+import { authcontractcolumns, overlap4337columns, transactingcontractcolumns } from "@/components/columns";
 
 export const metadata: Metadata = {
     title: "EIP-7702 2025 Year in Review | BundleBear Research",
@@ -193,6 +193,18 @@ export default function EIP7702YIR2025Page() {
                             />
                         </CardContent>
                     </Card>
+
+                    <h3 className="text-xl font-bold tracking-tight pt-6">Top Authorized Contracts by Active Wallets</h3>
+                    <p>
+                        Looking at which authorized contracts had the most 5+ time transacting wallets in 2025,{" "}
+                        <a href="https://www.bitget.com/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Bitget</a>{" "}
+                        leads with over 426k wallets, followed by{" "}
+                        <a href="https://metamask.io/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Metamask Delegator</a>{" "}
+                        with 359k and{" "}
+                        <a href="https://www.tokenpocket.pro/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">TokenPocket</a>{" "}
+                        with 133k.
+                    </p>
+                    <DataTable columns={transactingcontractcolumns} data={top_transacting_contracts} entity={false} />
                 </div>
 
                 {/* Section 3: 7702 x 4337 */}
@@ -210,7 +222,7 @@ export default function EIP7702YIR2025Page() {
                     </p>
                     <p>
                         By December 2025, EIP-7702 accounts were making 926k UserOps per month, up from just 
-                        5.7k in July.
+                        6.4k in July.
                     </p>
 
                     <Card className="border-2">
@@ -226,18 +238,18 @@ export default function EIP7702YIR2025Page() {
                     <p>
                         <a href="https://www.coinbase.com/wallet" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Coinbase Wallet</a>{" "}
                         was the dominant authorized contract for EIP-7702 accounts making ERC-4337 UserOps, 
-                        with over 211k accounts in 2025.{" "}
+                        with over 190k accounts in 2025.{" "}
                         <a href="https://zerodev.app/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Zerodev</a>{" "}
                         and{" "}
                         <a href="https://www.biconomy.io/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Biconomy</a>{" "}
-                        followed with 10.6k and 1.5k accounts respectively.
+                        followed with 8.1k and 2.9k accounts respectively.
                     </p>
 
-                    <DataTable columns={authcontractcolumns} data={top_7702_4337_contracts} entity={false} />
+                    <DataTable columns={overlap4337columns} data={top_7702_4337_contracts} entity={false} />
 
-                    <h3 className="text-xl font-bold tracking-tight pt-6">225k+ accounts used 7702 for 4337 UserOps</h3>
+                    <h3 className="text-xl font-bold tracking-tight pt-6">203k accounts used 7702 for 4337 UserOps</h3>
                     <p>
-                        By the end of 2025, over 225k unique EIP-7702 accounts had made at least one ERC-4337 UserOp. 
+                        By the end of 2025, over 203k unique EIP-7702 accounts had made at least one ERC-4337 UserOp. 
                         This represents a growing trend of users combining these two account abstraction technologies.
                     </p>
                 </div>
@@ -408,24 +420,37 @@ const actions_by_type = [
     { DATE: "2025-12-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 926143 },
 ];
 
+const top_transacting_contracts = [
+    { AUTHORIZED_CONTRACT: "Bitget", NUM_WALLETS: 425707 },
+    { AUTHORIZED_CONTRACT: "Metamask Delegator", NUM_WALLETS: 358868 },
+    { AUTHORIZED_CONTRACT: "TokenPocket", NUM_WALLETS: 132885 },
+    { AUTHORIZED_CONTRACT: "Uniswap", NUM_WALLETS: 70343 },
+    { AUTHORIZED_CONTRACT: "0x9d36...0f", NUM_WALLETS: 61933 },
+    { AUTHORIZED_CONTRACT: "Coinbase Wallet", NUM_WALLETS: 54300 },
+    { AUTHORIZED_CONTRACT: "Trustwallet", NUM_WALLETS: 40762 },
+    { AUTHORIZED_CONTRACT: "0xbc5b...65", NUM_WALLETS: 26046 },
+    { AUTHORIZED_CONTRACT: "0x28be...b4", NUM_WALLETS: 23776 },
+    { AUTHORIZED_CONTRACT: "0xb15b...4b", NUM_WALLETS: 23564 },
+];
+
 const monthly_7702_userops = [
-    { DATE: "2025-07-01", USEROPS: 5730 },
-    { DATE: "2025-08-01", USEROPS: 7288 },
+    { DATE: "2025-07-01", USEROPS: 6356 },
+    { DATE: "2025-08-01", USEROPS: 7289 },
     { DATE: "2025-09-01", USEROPS: 15741 },
     { DATE: "2025-10-01", USEROPS: 49153 },
     { DATE: "2025-11-01", USEROPS: 360757 },
-    { DATE: "2025-12-01", USEROPS: 926184 },
+    { DATE: "2025-12-01", USEROPS: 926185 },
 ];
 
 const top_7702_4337_contracts = [
-    { AUTHORIZED_CONTRACT: "Coinbase Wallet", NUM_WALLETS: 211668 },
-    { AUTHORIZED_CONTRACT: "Zerodev", NUM_WALLETS: 10629 },
-    { AUTHORIZED_CONTRACT: "Biconomy", NUM_WALLETS: 1479 },
-    { AUTHORIZED_CONTRACT: "0x336e...44", NUM_WALLETS: 766 },
+    { AUTHORIZED_CONTRACT: "Coinbase Wallet", NUM_WALLETS: 190509 },
+    { AUTHORIZED_CONTRACT: "Zerodev", NUM_WALLETS: 8132 },
+    { AUTHORIZED_CONTRACT: "Biconomy", NUM_WALLETS: 2923 },
+    { AUTHORIZED_CONTRACT: "0x336e...44", NUM_WALLETS: 761 },
     { AUTHORIZED_CONTRACT: "0x24be...2f", NUM_WALLETS: 161 },
-    { AUTHORIZED_CONTRACT: "0x00aa...05", NUM_WALLETS: 142 },
-    { AUTHORIZED_CONTRACT: "Alchemy", NUM_WALLETS: 125 },
-    { AUTHORIZED_CONTRACT: "Simple 7702Account", NUM_WALLETS: 96 },
-    { AUTHORIZED_CONTRACT: "Bitget", NUM_WALLETS: 71 },
-    { AUTHORIZED_CONTRACT: "Ambire Account", NUM_WALLETS: 53 },
+    { AUTHORIZED_CONTRACT: "0x00aa...d5", NUM_WALLETS: 142 },
+    { AUTHORIZED_CONTRACT: "0x0a0e...e0", NUM_WALLETS: 103 },
+    { AUTHORIZED_CONTRACT: "Simple 7702Account", NUM_WALLETS: 94 },
+    { AUTHORIZED_CONTRACT: "Bitget", NUM_WALLETS: 69 },
+    { AUTHORIZED_CONTRACT: "Alchemy", NUM_WALLETS: 62 },
 ];
