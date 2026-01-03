@@ -129,12 +129,12 @@ export default function EIP7702YIR2025Page() {
                 <div className="flex flex-col gap-4">
                     <h3 className="text-xl font-bold tracking-tight pt-6">1.2M non-hacker accounts were active in December 2025</h3>
                     <p>
-                        Focusing on legitimate usage, the number of monthly active non-hacker EIP-7702 accounts 
+                        Focusing on legitimate usage, the number of monthly transacting non-hacker EIP-7702 accounts 
                         grew steadily throughout 2025, from 223k in June to a peak of 1.2 million in December.
                     </p>
                     <Card className="border-2">
                         <CardHeader>
-                            <CardTitle className="mx-auto">Monthly Active Non-Hacker Accounts</CardTitle>
+                            <CardTitle className="mx-auto">Monthly Transacting Non-Hacker Accounts</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <SimpleLineChart data={monthly_active_noncrime} xaxis="DATE" yaxis="ACTIVE_ACCOUNTS" usd={false} />
@@ -144,7 +144,7 @@ export default function EIP7702YIR2025Page() {
                     <h3 className="text-xl font-bold tracking-tight pt-6">BSC leads in non-hacker EIP-7702 activity</h3>
                     <p>
                         BSC emerged as the dominant chain for legitimate EIP-7702 activity, with 480k 
-                        active non-hacker accounts in December 2025. Base was second with 354k, followed 
+                        transacting non-hacker accounts in December 2025. Base was second with 354k, followed 
                         by Ethereum mainnet with 194k.
                     </p>
                     <p>
@@ -155,7 +155,7 @@ export default function EIP7702YIR2025Page() {
                     </p>
                     <Card className="border-2">
                         <CardHeader>
-                            <CardTitle className="mx-auto">Non-Hacker Active Accounts by Chain</CardTitle>
+                            <CardTitle className="mx-auto">Non-Hacker Transacting Accounts by Chain</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <UnifiedBarChart 
