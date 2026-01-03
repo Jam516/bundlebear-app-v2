@@ -327,7 +327,7 @@ export const transactingcontractcolumns: ColumnDef<TransactingContract>[] = [
     },
     {
         accessorKey: "NUM_WALLETS",
-        header: "Active Wallets (5+ actions)",
+        header: "Transacting Wallets (5+ actions)",
         cell: ({ row }) => {
             const amount = parseFloat(row.getValue("NUM_WALLETS"))
 
