@@ -5,7 +5,11 @@ interface OverlapDataParams {
 
 interface OverlapData {
     eip7702_x_erc4337_userops: any[],
-    eip7702_x_erc4337_accounts: any[]
+    eip7702_x_erc4337_accounts: any[],
+    eip7702_x_erc4337_userops_pct: any[],
+    eip7702_x_erc4337_userops_gascost_pct: any[],
+    eip7702_x_erc4337_actions_pct: any[],
+    eip7702_x_erc4337_app_userops: any[]
 }
 
 export async function getOverlapData({ chain, timeframe }: OverlapDataParams): Promise<OverlapData> {

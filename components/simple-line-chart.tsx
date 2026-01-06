@@ -13,13 +13,17 @@ interface SimpleLineChartProps {
     xaxis: string;
     yaxis: string;
     usd?: boolean;
+    percent?: boolean;
+    percentDecimals?: number;
 }
 
 export function SimpleLineChart({
     data,
     xaxis,
     yaxis,
-    usd = false
+    usd = false,
+    percent = false,
+    percentDecimals = 2
 }: SimpleLineChartProps) {
     // Number shortening function for Y-axis
     const formatShortNumber = (num: number): string => {
@@ -39,6 +43,11 @@ export function SimpleLineChart({
         } else {
             return `${isNegative ? '-' : ''}${(absNum / 1000000000000).toFixed(1).replace(/\.0$/, "")}T`;
         }
+    };
+
+    const formatPercent = (value: number): string => {
+        if (Number.isNaN(value)) return '0%';
+        return `${value.toFixed(percentDecimals)}%`;
     };
 
     // Type definitions for the tooltip
@@ -63,13 +72,15 @@ export function SimpleLineChart({
         return (
             <div className="custom-tooltip" style={{ backgroundColor: 'white', padding: '10px', border: '1px solid #ccc', borderRadius: '4px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
                 <p className="label" style={{ margin: '0 0 5px 0', fontWeight: 'bold' }}>{`${xaxis}: ${label}`}</p>
-                {payload.map((entry: TooltipPayloadItem, index: number) => (
+                {payload.map((entry: TooltipPayloadItem, index: number) => (    
                     <p key={`item-${index}`} style={{ color: entry.color, margin: '0' }}>
                         {`${entry.name}: ${usd
                             ? entry.value < 0
                                 ? `-$${Math.abs(entry.value).toLocaleString()}`
                                 : `$${entry.value.toLocaleString()}`
-                            : entry.value.toLocaleString()}`}
+                            : percent
+                                ? formatPercent(Number(entry.value))
+                                : entry.value.toLocaleString()}`}
                     </p>
                 ))}
             </div>
@@ -99,7 +110,11 @@ export function SimpleLineChart({
                     tickLine={false}
                     axisLine={false}
                     tickFormatter={(value: number) => {
-                        const formattedValue = formatShortNumber(value);
+                        if (percent) {
+                            return formatPercent(value);
+                        }
+
+                        const formattedValue = formatShortNumber(value);        
                         if (usd) {
                             // Check if the value is negative
                             return value < 0
