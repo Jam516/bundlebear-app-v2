@@ -127,10 +127,10 @@ export default function EIP7702YIR2025Page() {
                 </div>
 
                 <div className="flex flex-col gap-4">
-                    <h3 className="text-xl font-bold tracking-tight pt-6">1.2M non-hacker accounts were active in December 2025</h3>
+                    <h3 className="text-xl font-bold tracking-tight pt-6">1.5M non-hacker accounts were active in December 2025</h3>
                     <p>
                         Focusing on legitimate usage, the number of monthly transacting non-hacker EIP-7702 accounts 
-                        grew steadily throughout 2025, from 223k in June to a peak of 1.2 million in December.
+                        grew steadily throughout 2025, from 240k in June to a peak of 1.5 million in December.
                     </p>
                     <Card className="border-2">
                         <CardHeader>
@@ -143,9 +143,9 @@ export default function EIP7702YIR2025Page() {
 
                     <h3 className="text-xl font-bold tracking-tight pt-6">BSC leads in non-hacker EIP-7702 activity</h3>
                     <p>
-                        BSC emerged as the dominant chain for legitimate EIP-7702 activity, with 480k 
-                        transacting non-hacker accounts in December 2025. Base was second with 354k, followed 
-                        by Ethereum mainnet with 194k.
+                        BSC emerged as the dominant chain for legitimate EIP-7702 activity, with 598k 
+                        transacting non-hacker accounts in December 2025. Base was second with 393k, followed 
+                        by Ethereum mainnet with 222k, and Polygon with 219k.
                     </p>
                     <p>
                         BSC&apos;s dominance was driven primarily by{" "}
@@ -198,11 +198,11 @@ export default function EIP7702YIR2025Page() {
                     <p>
                         Looking at which authorized contracts had the most 5+ time transacting wallets in 2025,{" "}
                         <a href="https://www.bitget.com/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Bitget</a>{" "}
-                        leads with over 426k wallets, followed by{" "}
+                        leads with 420k wallets, followed by{" "}
                         <a href="https://metamask.io/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Metamask Delegator</a>{" "}
-                        with 359k and{" "}
+                        with 358k and{" "}
                         <a href="https://www.tokenpocket.pro/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">TokenPocket</a>{" "}
-                        with 133k.
+                        with 137k.
                     </p>
                     <DataTable columns={transactingcontractcolumns} data={top_transacting_contracts} entity={false} />
                 </div>
@@ -221,8 +221,8 @@ export default function EIP7702YIR2025Page() {
                         paymasters) without having to migrate their assets to a new address.
                     </p>
                     <p>
-                        By December 2025, EIP-7702 accounts were making 926k UserOps per month, up from just 
-                        6.4k in July.
+                        By December 2025, EIP-7702 accounts were making 2.3 million UserOps per month, up from 
+                        109k in July - a 20x increase over the second half of the year.
                     </p>
 
                     <Card className="border-2">
@@ -234,23 +234,25 @@ export default function EIP7702YIR2025Page() {
                         </CardContent>
                     </Card>
 
-                    <h3 className="text-xl font-bold tracking-tight pt-6">Coinbase Wallet leads 7702 x 4337 adoption</h3>
+                    <h3 className="text-xl font-bold tracking-tight pt-6">Trustwallet leads 7702 x 4337 adoption</h3>
                     <p>
-                        <a href="https://www.coinbase.com/wallet" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Coinbase Wallet</a>{" "}
+                        <a href="https://trustwallet.com/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Trustwallet</a>{" "}
                         was the dominant authorized contract for EIP-7702 accounts making ERC-4337 UserOps, 
-                        with over 190k accounts in 2025.{" "}
+                        with 233k accounts in 2025.{" "}
+                        <a href="https://www.coinbase.com/wallet" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Coinbase Wallet</a>{" "}
+                        followed with 191k accounts, then{" "}
                         <a href="https://zerodev.app/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Zerodev</a>{" "}
-                        and{" "}
-                        <a href="https://www.biconomy.io/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Biconomy</a>{" "}
-                        followed with 8.1k and 2.9k accounts respectively.
+                        with 77k and{" "}
+                        <a href="https://alchemy.com/" className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">Alchemy</a>{" "}
+                        with 75k.
                     </p>
 
                     <DataTable columns={overlap4337columns} data={top_7702_4337_contracts} entity={false} />
 
-                    <h3 className="text-xl font-bold tracking-tight pt-6">203k accounts used 7702 for 4337 UserOps</h3>
+                    <h3 className="text-xl font-bold tracking-tight pt-6">805k accounts used 7702 for 4337 UserOps</h3>
                     <p>
-                        By the end of 2025, over 203k unique EIP-7702 accounts had made at least one ERC-4337 UserOp. 
-                        This represents a growing trend of users combining these two account abstraction technologies.
+                        By the end of 2025, over 805k unique EIP-7702 accounts had made at least one ERC-4337 UserOp. 
+                        This represents a significant trend of wallet apps combining these two account abstraction technologies.
                     </p>
                 </div>
 
@@ -322,135 +324,230 @@ const top_auth_contracts_noncrime = [
 ];
 
 const monthly_active_noncrime = [
-    { DATE: "2025-06-01", ACTIVE_ACCOUNTS: 223224 },
-    { DATE: "2025-07-01", ACTIVE_ACCOUNTS: 343691 },
-    { DATE: "2025-08-01", ACTIVE_ACCOUNTS: 466032 },
-    { DATE: "2025-09-01", ACTIVE_ACCOUNTS: 607187 },
-    { DATE: "2025-10-01", ACTIVE_ACCOUNTS: 790196 },
-    { DATE: "2025-11-01", ACTIVE_ACCOUNTS: 930650 },
-    { DATE: "2025-12-01", ACTIVE_ACCOUNTS: 1208711 },
+    { DATE: "2025-06-01", ACTIVE_ACCOUNTS: 239944 },
+    { DATE: "2025-07-01", ACTIVE_ACCOUNTS: 367556 },
+    { DATE: "2025-08-01", ACTIVE_ACCOUNTS: 489066 },
+    { DATE: "2025-09-01", ACTIVE_ACCOUNTS: 650654 },
+    { DATE: "2025-10-01", ACTIVE_ACCOUNTS: 859509 },
+    { DATE: "2025-11-01", ACTIVE_ACCOUNTS: 1072819 },
+    { DATE: "2025-12-01", ACTIVE_ACCOUNTS: 1473900 },
 ];
+/*
+Query:
+SELECT
+    DATE_TRUNC('month', BLOCK_DATE) AS DATE,
+    COUNT(DISTINCT FROM_ADDRESS) AS ACTIVE_ACCOUNTS
+FROM BUNDLEBEAR.DBT_KOFI.EIP7702_ACTIONS a
+LEFT JOIN BUNDLEBEAR.DBT_KOFI.EIP7702_LABELS_AUTHORIZED_CONTRACTS l
+    ON a.AUTHORIZED_CONTRACT = l.ADDRESS
+WHERE BLOCK_DATE >= DATE('2025-01-01')
+  AND BLOCK_DATE < DATE('2026-01-01')
+  AND COALESCE(l.NAME, '') NOT LIKE '%Crime%'
+GROUP BY 1
+ORDER BY 1
+*/
 
 const noncrime_by_chain = [
-    { DATE: "2025-06-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 90933 },
-    { DATE: "2025-06-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 76804 },
-    { DATE: "2025-06-01", CHAIN: "base", ACTIVE_ACCOUNTS: 49355 },
-    { DATE: "2025-06-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 29402 },
-    { DATE: "2025-06-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 13311 },
+    { DATE: "2025-06-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 98984 },
+    { DATE: "2025-06-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 84724 },
+    { DATE: "2025-06-01", CHAIN: "base", ACTIVE_ACCOUNTS: 50222 },
+    { DATE: "2025-06-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 29708 },
+    { DATE: "2025-06-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 13334 },
     { DATE: "2025-06-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 2740 },
-    { DATE: "2025-06-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 597 },
-    { DATE: "2025-07-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 137802 },
-    { DATE: "2025-07-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 84396 },
-    { DATE: "2025-07-01", CHAIN: "base", ACTIVE_ACCOUNTS: 69017 },
-    { DATE: "2025-07-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 52969 },
-    { DATE: "2025-07-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 28868 },
-    { DATE: "2025-07-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 15852 },
-    { DATE: "2025-07-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 5601 },
-    { DATE: "2025-07-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 898 },
-    { DATE: "2025-08-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 170721 },
-    { DATE: "2025-08-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 152561 },
-    { DATE: "2025-08-01", CHAIN: "base", ACTIVE_ACCOUNTS: 116484 },
-    { DATE: "2025-08-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 55941 },
-    { DATE: "2025-08-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 45492 },
-    { DATE: "2025-08-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 39328 },
+    { DATE: "2025-06-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 602 },
+    { DATE: "2025-07-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 153061 },
+    { DATE: "2025-07-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 88682 },
+    { DATE: "2025-07-01", CHAIN: "base", ACTIVE_ACCOUNTS: 72484 },
+    { DATE: "2025-07-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 53604 },
+    { DATE: "2025-07-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 31294 },
+    { DATE: "2025-07-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 17047 },
+    { DATE: "2025-07-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 5772 },
+    { DATE: "2025-07-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 963 },
+    { DATE: "2025-08-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 185828 },
+    { DATE: "2025-08-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 154732 },
+    { DATE: "2025-08-01", CHAIN: "base", ACTIVE_ACCOUNTS: 120034 },
+    { DATE: "2025-08-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 58004 },
+    { DATE: "2025-08-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 46883 },
+    { DATE: "2025-08-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 39586 },
     { DATE: "2025-08-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 5598 },
-    { DATE: "2025-08-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 2552 },
-    { DATE: "2025-09-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 251593 },
-    { DATE: "2025-09-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 175539 },
-    { DATE: "2025-09-01", CHAIN: "base", ACTIVE_ACCOUNTS: 149173 },
-    { DATE: "2025-09-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 59844 },
-    { DATE: "2025-09-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 53803 },
-    { DATE: "2025-09-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 33815 },
-    { DATE: "2025-09-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 6526 },
-    { DATE: "2025-09-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 5576 },
-    { DATE: "2025-10-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 349712 },
-    { DATE: "2025-10-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 195834 },
-    { DATE: "2025-10-01", CHAIN: "base", ACTIVE_ACCOUNTS: 174019 },
-    { DATE: "2025-10-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 91625 },
-    { DATE: "2025-10-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 88835 },
-    { DATE: "2025-10-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 16710 },
+    { DATE: "2025-08-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 2561 },
+    { DATE: "2025-09-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 256910 },
+    { DATE: "2025-09-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 193479 },
+    { DATE: "2025-09-01", CHAIN: "base", ACTIVE_ACCOUNTS: 164074 },
+    { DATE: "2025-09-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 66192 },
+    { DATE: "2025-09-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 56960 },
+    { DATE: "2025-09-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 36963 },
+    { DATE: "2025-09-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 6521 },
+    { DATE: "2025-09-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 5574 },
+    { DATE: "2025-10-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 365214 },
+    { DATE: "2025-10-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 220283 },
+    { DATE: "2025-10-01", CHAIN: "base", ACTIVE_ACCOUNTS: 201449 },
+    { DATE: "2025-10-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 103202 },
+    { DATE: "2025-10-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 98302 },
+    { DATE: "2025-10-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 24126 },
     { DATE: "2025-10-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 4949 },
-    { DATE: "2025-10-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 1222 },
-    { DATE: "2025-11-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 457067 },
-    { DATE: "2025-11-01", CHAIN: "base", ACTIVE_ACCOUNTS: 209288 },
-    { DATE: "2025-11-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 168813 },
-    { DATE: "2025-11-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 105442 },
-    { DATE: "2025-11-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 83604 },
-    { DATE: "2025-11-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 13453 },
+    { DATE: "2025-10-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 1251 },
+    { DATE: "2025-11-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 514027 },
+    { DATE: "2025-11-01", CHAIN: "base", ACTIVE_ACCOUNTS: 237626 },
+    { DATE: "2025-11-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 197389 },
+    { DATE: "2025-11-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 133660 },
+    { DATE: "2025-11-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 96638 },
+    { DATE: "2025-11-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 22144 },
     { DATE: "2025-11-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 4163 },
-    { DATE: "2025-11-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 2012 },
-    { DATE: "2025-12-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 480207 },
-    { DATE: "2025-12-01", CHAIN: "base", ACTIVE_ACCOUNTS: 353644 },
-    { DATE: "2025-12-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 193821 },
-    { DATE: "2025-12-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 151024 },
-    { DATE: "2025-12-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 143759 },
-    { DATE: "2025-12-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 12871 },
+    { DATE: "2025-11-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 2074 },
+    { DATE: "2025-12-01", CHAIN: "bsc", ACTIVE_ACCOUNTS: 598497 },
+    { DATE: "2025-12-01", CHAIN: "base", ACTIVE_ACCOUNTS: 393368 },
+    { DATE: "2025-12-01", CHAIN: "ethereum", ACTIVE_ACCOUNTS: 222073 },
+    { DATE: "2025-12-01", CHAIN: "polygon", ACTIVE_ACCOUNTS: 219469 },
+    { DATE: "2025-12-01", CHAIN: "arbitrum", ACTIVE_ACCOUNTS: 165246 },
+    { DATE: "2025-12-01", CHAIN: "optimism", ACTIVE_ACCOUNTS: 22327 },
     { DATE: "2025-12-01", CHAIN: "unichain", ACTIVE_ACCOUNTS: 3559 },
-    { DATE: "2025-12-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 1648 },
+    { DATE: "2025-12-01", CHAIN: "gnosis", ACTIVE_ACCOUNTS: 1770 },
 ];
+/*
+Query:
+SELECT
+    DATE_TRUNC('month', BLOCK_DATE) AS DATE,
+    CHAIN,
+    COUNT(DISTINCT FROM_ADDRESS) AS ACTIVE_ACCOUNTS
+FROM BUNDLEBEAR.DBT_KOFI.EIP7702_ACTIONS a
+LEFT JOIN BUNDLEBEAR.DBT_KOFI.EIP7702_LABELS_AUTHORIZED_CONTRACTS l
+    ON a.AUTHORIZED_CONTRACT = l.ADDRESS
+WHERE BLOCK_DATE >= DATE('2025-06-01')
+  AND BLOCK_DATE < DATE('2026-01-01')
+  AND COALESCE(l.NAME, '') NOT LIKE '%Crime%'
+GROUP BY 1, 2
+ORDER BY 1, 3 DESC
+*/
 
 const actions_by_type = [
     { DATE: "2025-06-01", TYPE: "eoa txn", NUM_ACTIONS: 2415949 },
-    { DATE: "2025-06-01", TYPE: "relayed action", NUM_ACTIONS: 466645 },
     { DATE: "2025-06-01", TYPE: "self-initated txn", NUM_ACTIONS: 713707 },
-    { DATE: "2025-06-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 7943 },
+    { DATE: "2025-06-01", TYPE: "relayed action", NUM_ACTIONS: 466645 },
+    { DATE: "2025-06-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 120978 },
     { DATE: "2025-07-01", TYPE: "eoa txn", NUM_ACTIONS: 6143753 },
     { DATE: "2025-07-01", TYPE: "relayed action", NUM_ACTIONS: 3967008 },
     { DATE: "2025-07-01", TYPE: "self-initated txn", NUM_ACTIONS: 2160222 },
-    { DATE: "2025-07-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 6357 },
+    { DATE: "2025-07-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 109362 },
     { DATE: "2025-08-01", TYPE: "eoa txn", NUM_ACTIONS: 8842730 },
     { DATE: "2025-08-01", TYPE: "relayed action", NUM_ACTIONS: 8753705 },
     { DATE: "2025-08-01", TYPE: "self-initated txn", NUM_ACTIONS: 2520558 },
-    { DATE: "2025-08-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 7289 },
-    { DATE: "2025-09-01", TYPE: "eoa txn", NUM_ACTIONS: 13170273 },
+    { DATE: "2025-08-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 213952 },
     { DATE: "2025-09-01", TYPE: "relayed action", NUM_ACTIONS: 16023168 },
+    { DATE: "2025-09-01", TYPE: "eoa txn", NUM_ACTIONS: 13170273 },
     { DATE: "2025-09-01", TYPE: "self-initated txn", NUM_ACTIONS: 4263351 },
-    { DATE: "2025-09-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 15741 },
-    { DATE: "2025-10-01", TYPE: "eoa txn", NUM_ACTIONS: 23356206 },
+    { DATE: "2025-09-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 408458 },
     { DATE: "2025-10-01", TYPE: "relayed action", NUM_ACTIONS: 30150332 },
+    { DATE: "2025-10-01", TYPE: "eoa txn", NUM_ACTIONS: 23356206 },
     { DATE: "2025-10-01", TYPE: "self-initated txn", NUM_ACTIONS: 6631391 },
-    { DATE: "2025-10-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 49150 },
+    { DATE: "2025-10-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 784630 },
     { DATE: "2025-11-01", TYPE: "eoa txn", NUM_ACTIONS: 19760739 },
     { DATE: "2025-11-01", TYPE: "relayed action", NUM_ACTIONS: 18657386 },
     { DATE: "2025-11-01", TYPE: "self-initated txn", NUM_ACTIONS: 4482364 },
-    { DATE: "2025-11-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 360750 },
-    { DATE: "2025-12-01", TYPE: "eoa txn", NUM_ACTIONS: 18541263 },
-    { DATE: "2025-12-01", TYPE: "relayed action", NUM_ACTIONS: 15987913 },
-    { DATE: "2025-12-01", TYPE: "self-initated txn", NUM_ACTIONS: 4327297 },
-    { DATE: "2025-12-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 926143 },
+    { DATE: "2025-11-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 1165928 },
+    { DATE: "2025-12-01", TYPE: "eoa txn", NUM_ACTIONS: 17907166 },
+    { DATE: "2025-12-01", TYPE: "relayed action", NUM_ACTIONS: 15559121 },
+    { DATE: "2025-12-01", TYPE: "self-initated txn", NUM_ACTIONS: 4179625 },
+    { DATE: "2025-12-01", TYPE: "erc-4337 userop", NUM_ACTIONS: 2283597 },
 ];
+/*
+Query:
+SELECT
+    DATE_TRUNC('month', BLOCK_DATE) AS DATE,
+    TYPE,
+    COUNT(*) AS NUM_ACTIONS
+FROM BUNDLEBEAR.DBT_KOFI.EIP7702_ACTIONS a
+LEFT JOIN BUNDLEBEAR.DBT_KOFI.EIP7702_LABELS_AUTHORIZED_CONTRACTS l
+    ON a.AUTHORIZED_CONTRACT = l.ADDRESS
+WHERE BLOCK_DATE >= DATE('2025-06-01')
+  AND BLOCK_DATE < DATE('2026-01-01')
+  AND COALESCE(l.NAME, '') NOT LIKE '%Crime%'
+GROUP BY 1, 2
+ORDER BY 1, 3 DESC
+*/
 
 const top_transacting_contracts = [
-    { AUTHORIZED_CONTRACT: "Bitget", NUM_WALLETS: 425707 },
-    { AUTHORIZED_CONTRACT: "Metamask Delegator", NUM_WALLETS: 358868 },
-    { AUTHORIZED_CONTRACT: "TokenPocket", NUM_WALLETS: 132885 },
-    { AUTHORIZED_CONTRACT: "Uniswap", NUM_WALLETS: 70343 },
-    { AUTHORIZED_CONTRACT: "0x9d36...0f", NUM_WALLETS: 61933 },
-    { AUTHORIZED_CONTRACT: "Coinbase Wallet", NUM_WALLETS: 54300 },
-    { AUTHORIZED_CONTRACT: "Trustwallet", NUM_WALLETS: 40762 },
-    { AUTHORIZED_CONTRACT: "0xbc5b...65", NUM_WALLETS: 26046 },
+    { AUTHORIZED_CONTRACT: "Bitget", NUM_WALLETS: 419978 },
+    { AUTHORIZED_CONTRACT: "Metamask Delegator", NUM_WALLETS: 357552 },
+    { AUTHORIZED_CONTRACT: "TokenPocket", NUM_WALLETS: 137247 },
+    { AUTHORIZED_CONTRACT: "Trustwallet", NUM_WALLETS: 79361 },
+    { AUTHORIZED_CONTRACT: "Uniswap", NUM_WALLETS: 70553 },
+    { AUTHORIZED_CONTRACT: "0x9d36...0f", NUM_WALLETS: 61224 },
+    { AUTHORIZED_CONTRACT: "Coinbase Wallet", NUM_WALLETS: 53979 },
+    { AUTHORIZED_CONTRACT: "Zerodev", NUM_WALLETS: 31736 },
+    { AUTHORIZED_CONTRACT: "0xbc5b...65", NUM_WALLETS: 26050 },
     { AUTHORIZED_CONTRACT: "0x28be...b4", NUM_WALLETS: 23776 },
-    { AUTHORIZED_CONTRACT: "0xb15b...4b", NUM_WALLETS: 23564 },
 ];
+/*
+Query:
+SELECT
+    COALESCE(l.NAME, CONCAT(LEFT(a.AUTHORIZED_CONTRACT, 6), '...', RIGHT(a.AUTHORIZED_CONTRACT, 2))) AS AUTHORIZED_CONTRACT,
+    COUNT(DISTINCT a.FROM_ADDRESS) AS NUM_WALLETS
+FROM BUNDLEBEAR.DBT_KOFI.EIP7702_ACTIONS a
+LEFT JOIN BUNDLEBEAR.DBT_KOFI.EIP7702_LABELS_AUTHORIZED_CONTRACTS l
+    ON a.AUTHORIZED_CONTRACT = l.ADDRESS
+WHERE a.BLOCK_DATE >= DATE('2025-01-01')
+  AND a.BLOCK_DATE < DATE('2026-01-01')
+  AND COALESCE(l.NAME, '') NOT LIKE '%Crime%'
+  AND a.FROM_ADDRESS IN (
+      SELECT FROM_ADDRESS 
+      FROM BUNDLEBEAR.DBT_KOFI.EIP7702_ACTIONS
+      WHERE BLOCK_DATE >= DATE('2025-01-01')
+        AND BLOCK_DATE < DATE('2026-01-01')
+      GROUP BY FROM_ADDRESS
+      HAVING COUNT(*) >= 5
+  )
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 10
+*/
 
 const monthly_7702_userops = [
-    { DATE: "2025-07-01", USEROPS: 6356 },
-    { DATE: "2025-08-01", USEROPS: 7289 },
-    { DATE: "2025-09-01", USEROPS: 15741 },
-    { DATE: "2025-10-01", USEROPS: 49153 },
-    { DATE: "2025-11-01", USEROPS: 360757 },
-    { DATE: "2025-12-01", USEROPS: 926185 },
+    { DATE: "2025-06-01", USEROPS: 121024 },
+    { DATE: "2025-07-01", USEROPS: 109384 },
+    { DATE: "2025-08-01", USEROPS: 213960 },
+    { DATE: "2025-09-01", USEROPS: 408543 },
+    { DATE: "2025-10-01", USEROPS: 784638 },
+    { DATE: "2025-11-01", USEROPS: 1165985 },
+    { DATE: "2025-12-01", USEROPS: 2283665 },
 ];
+/*
+Query:
+SELECT
+    DATE_TRUNC('month', BLOCK_DATE) AS DATE,
+    COUNT(*) AS USEROPS
+FROM BUNDLEBEAR.DBT_KOFI.EIP7702_ACTIONS
+WHERE BLOCK_DATE >= DATE('2025-01-01')
+  AND BLOCK_DATE < DATE('2026-01-01')
+  AND TYPE = 'erc-4337 userop'
+GROUP BY 1
+ORDER BY 1
+*/
 
 const top_7702_4337_contracts = [
+    { AUTHORIZED_CONTRACT: "Trustwallet", NUM_WALLETS: 233163 },
     { AUTHORIZED_CONTRACT: "Coinbase Wallet", NUM_WALLETS: 190509 },
-    { AUTHORIZED_CONTRACT: "Zerodev", NUM_WALLETS: 8132 },
-    { AUTHORIZED_CONTRACT: "Biconomy", NUM_WALLETS: 2923 },
-    { AUTHORIZED_CONTRACT: "0x336e...44", NUM_WALLETS: 761 },
-    { AUTHORIZED_CONTRACT: "0x24be...2f", NUM_WALLETS: 161 },
-    { AUTHORIZED_CONTRACT: "0x00aa...d5", NUM_WALLETS: 142 },
-    { AUTHORIZED_CONTRACT: "0x0a0e...e0", NUM_WALLETS: 103 },
-    { AUTHORIZED_CONTRACT: "Simple 7702Account", NUM_WALLETS: 94 },
-    { AUTHORIZED_CONTRACT: "Bitget", NUM_WALLETS: 69 },
-    { AUTHORIZED_CONTRACT: "Alchemy", NUM_WALLETS: 62 },
+    { AUTHORIZED_CONTRACT: "Simple 7702Account", NUM_WALLETS: 135626 },
+    { AUTHORIZED_CONTRACT: "Zerodev", NUM_WALLETS: 77148 },
+    { AUTHORIZED_CONTRACT: "Alchemy", NUM_WALLETS: 74499 },
+    { AUTHORIZED_CONTRACT: "Biconomy", NUM_WALLETS: 53984 },
+    { AUTHORIZED_CONTRACT: "TokenPocket", NUM_WALLETS: 37326 },
+    { AUTHORIZED_CONTRACT: "Ambire", NUM_WALLETS: 2515 },
+    { AUTHORIZED_CONTRACT: "Metamask Delegator", NUM_WALLETS: 1212 },
+    { AUTHORIZED_CONTRACT: "0x336e...44", NUM_WALLETS: 763 },
 ];
+/*
+Query:
+SELECT
+    COALESCE(l.NAME, CONCAT(LEFT(a.AUTHORIZED_CONTRACT, 6), '...', RIGHT(a.AUTHORIZED_CONTRACT, 2))) AS AUTHORIZED_CONTRACT,
+    COUNT(DISTINCT FROM_ADDRESS) AS NUM_WALLETS
+FROM BUNDLEBEAR.DBT_KOFI.EIP7702_ACTIONS a
+LEFT JOIN BUNDLEBEAR.DBT_KOFI.EIP7702_LABELS_AUTHORIZED_CONTRACTS l
+    ON a.AUTHORIZED_CONTRACT = l.ADDRESS
+WHERE TYPE = 'erc-4337 userop'
+  AND BLOCK_DATE >= DATE('2025-01-01')
+  AND BLOCK_DATE < DATE('2026-01-01')
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 10
+*/

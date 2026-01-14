@@ -1,6 +1,6 @@
 import { getOverlapData } from "@/app/actions/getOverlapData";
 import { Metadata } from "next";
-// import { TimeSelect } from "@/components/time-select";
+import { TimeSelect } from "@/components/time-select";
 import {
     Card,
     CardContent,
@@ -50,6 +50,7 @@ export default async function OverlapPage({ params }: { params: tParams }) {
     
             <p className="text-muted-foreground text-m">This page tracks the ERC-4337 activity of EIP-7702 Accounts</p>
             {/* <Separator /> */}
+            <TimeSelect />
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                 <Card>
                     <CardHeader>

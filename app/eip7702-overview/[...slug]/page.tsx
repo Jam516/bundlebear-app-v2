@@ -78,7 +78,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
       <li className="text-sm"><strong>self-initiated txns:</strong> Transactions where the smart account runs its own code</li>
       <li className="text-sm"><strong>relayed actions:</strong> Actions initiated by a third-party wallet that calls the smart account&apos;s code (without using 4337)</li>
       <li className="text-sm"><strong>eoa txns:</strong> Regular transactions where the smart account didn&apos;t use its code</li>
-
+      <TimeSelect />
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -157,7 +157,7 @@ export default async function OverviewPage7702({ params }: { params: tParams }) 
         </div>
       }
 
-      <TimeSelect />
+      
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
         <Card>
           <CardHeader>
