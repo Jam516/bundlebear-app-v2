@@ -25,6 +25,13 @@ export function SimpleLineChart({
     percent = false,
     percentDecimals = 2
 }: SimpleLineChartProps) {
+    // Recharts only includes numbers when calculating a numeric axis domain.
+    // API decimal values can arrive as strings, so normalize the selected series.
+    const normalizedData = data.map((entry) => ({
+        ...entry,
+        [yaxis]: Number(entry[yaxis])
+    }));
+
     // Number shortening function for Y-axis
     const formatShortNumber = (num: number): string => {
         if (num === 0) return '0';
@@ -90,7 +97,7 @@ export function SimpleLineChart({
     return (
         <ResponsiveContainer width="100%" height={350}>
             <LineChart
-                data={data}
+                data={normalizedData}
             >
                 <CartesianGrid vertical={false} horizontal={true} strokeDasharray="3 3" />
                 <XAxis
